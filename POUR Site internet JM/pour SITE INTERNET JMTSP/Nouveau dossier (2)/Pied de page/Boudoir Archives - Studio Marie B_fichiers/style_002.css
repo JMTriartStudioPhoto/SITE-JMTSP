@@ -1,0 +1,960 @@
+/*
+Theme Name: Theme Aksite
+Theme URI: https://studio-marieb.com
+Description: Child Theme twentysixteen
+Author: Akro Web
+Author URI: http://akro-web.com
+Template: twentysixteen
+Version: 1.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, right-sidebar, custom-background, post-formats
+Text Domain: aksite
+*/
+
+
+* html, body {position: relative; margin: 0; padding: 0; border: 0; color: #000000; font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 300; background: #FFF; line-height: 1.1; letter-spacing: 0.9px;}
+
+a, a:hover {text-decoration: none; font-weight: 300;}
+a img {border: none;}
+a, a:visited {color: #9c7f56;}
+a:hover {color: #000;}
+a:active, a:focus {outline: none;}
+.CLR {clear: both;}
+.alignleft, .alignright {clear: both;}
+
+/* STYLE twentysixteen */
+body:not(.custom-background-image)::before, body:not(.custom-background-image)::after {height: 0;}
+.site {margin: 0;}
+.site-content {padding: 0;}
+.site-inner {max-width: 100%;}
+
+/* VIDEOS */
+.rve {position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;}
+.rve iframe, .rve object, .rve embed {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+embed, iframe, object, video {margin:0;}
+
+
+/********************************
+ CONTENU
+ *******************************/
+section {display: block; position: relative; margin: 0 auto; width: 100%; clear: both;}
+#content {display: block; position: relative; margin-bottom: 510px; padding: 0; background: #FFF; z-index: 1;}
+.wrapper {display: block; position: relative; margin: 0 auto; width: 90%;}
+#contenu {position: relative; margin: 0 auto; padding: 0 0 60px 0;}
+.section-border {display: block; position: relative; margin: 0 auto 30px; width: 1px; height: 110px; background: #000;}
+h4 {margin: 0 0 20px 0; color: #000; font-weight: 300; font-size: 40px; font-family: 'Oranienbaum', serif; text-align: left; text-transform: uppercase;}
+h1 {margin: 15px 0 30px 0; width: 30%; color: #5e5d5d; font-size: 21px; font-weight: 100; font-family: 'Open Sans Condensed', sans-serif; text-transform: none; text-align: left;}
+h2 {margin: 40px 0 12px 0; color: #9c7f56; font-size: 22px; font-weight: 300; text-transform: uppercase;}
+h3 {margin: 40px 0 12px 0; color: #9c7f56; font-size: 20px; font-weight: 300; text-transform: none;}
+p {margin: 0 0 10px 0;}
+
+
+
+/*******************************************
+  HEADER
+ *******************************************/
+header {display: block; position: relative; padding: 20px 0 30px 0; width: 100%; background: #FFF; z-index: 4; -webkit-box-shadow: 3px 1px 11px 1px rgba(0, 0, 0, 0.5); box-shadow: 3px 1px 11px 1px rgba(0, 0, 0, 0.5);}
+header.fixed {position: fixed; -webkit-box-shadow: 3px 1px 11px 1px rgba(0, 0, 0, 0.5); box-shadow: 3px 1px 11px 1px rgba(0, 0, 0, 0.5);}
+.header-top {display: block; position: absolute; margin: 0 auto; top: 20px; left: 0; width: 100%; height: 41px; z-index: 2;}
+
+/* Social Media */
+header .social-navigation {display: block; float: left; padding: 0;}
+header .social-navigation li {margin: 0 10px 0 0;}
+header .social-navigation a {padding: 1px; border: none; color: #FFF; height: 30px; width: 30px; border-radius: 0; background: #000;}
+header .social-navigation a::before {width: 30px; height: 30px; line-height: 30px; font-size: 20px;}
+header .social-navigation a:hover::before, header .social-navigation a:focus::before {background: #5e5d5d; color: #FFF;}
+
+
+/* Header menu */
+header .header-menu {display: block; position: relative; margin: 0 auto; width: 100%; height: 100px;}
+header.fixed .header-menu {height: 100px;}
+.main-navigation ul {display: table; width: 100%;}
+.main-navigation .primary-menu > li {float: none; display: table-cell;}
+.site-header-menu {margin: 0; text-align: center; width: 100%;}
+.main-navigation li {padding: 0 2rem; color: #5e5d5d; font-size: 19px; letter-spacing: 1px; font-weight: 300; font-family: 'Open Sans Condensed', sans-serif; text-transform: uppercase;}
+.main-navigation a {margin: 0; padding: 0.75rem 0; line-height: 0; color: #5e5d5d;}
+.main-navigation .current-menu-item > a, .main-navigation .current-menu-ancestor > a {font-weight: 300; color: #5e5d5d;}
+.main-navigation li:hover > a, .main-navigation li.focus > a , .main-navigation li:visited > a{color: #9c7f56;}
+.main-navigation li::before {position: absolute; content: "·"; font-weight: 700; left: 2px; position: absolute; top: 3px;}
+.main-navigation li:first-child::before {display: none;}
+
+header img.header-logo {float: none; display: block; margin: 40px auto 0; text-align: center;}
+header.fixed img.header-logo {display: none;}
+
+header img.header-logop {display: block; margin: 0 auto 20px;}
+
+/*******************************************
+  FOOTER
+ *******************************************/
+footer {position: fixed; bottom: 0; width: 100%; z-index: 0;}
+footer .section-border {display: block; position: relative; margin: 0 auto; width: 1px; height: 110px; background: #FFF;}
+footer .footer-top {padding: 0 0 30px 0; background: #000;}
+footer .footer-top img {display: block; position: relative; margin: 30px auto;}
+footer .footer-top h5  {display: block; position: relative; margin: 0 0 20px 0; padding: 0; font-weight: 300; color: #FFF; font-size: 38px; font-family: 'Oranienbaum', serif; text-align: center; letter-spacing: 0px; text-transform: none; text-shadow: 3px 3px 2px #000; z-index: 3;}
+footer .footer-top h6 {display: block; position: relative; margin: 30px 0; padding: 0; font-weight: 300; color: #FFF; font-size: 16px; font-family: 'Oranienbaum', serif; text-align: center; letter-spacing: 0px; text-transform: none; text-shadow: 3px 3px 2px #000; z-index: 3;}
+footer .footer-top p {display: block; margin: 0 auto; width: 90%; color: #FFF; font-size: 14px; font-family: 'Open Sans Condensed', sans-serif; font-weight: 300; text-align: center;}
+footer .footer-bottom {padding: 15px 0; font-family: 'Open Sans Condensed', sans-serif; text-align: center; color: #000; font-size: 12px; font-weight: 300; background: #FFF;}
+footer .footer-bottom p {margin: 0;}
+footer .footer-bottom a, footer .footer-bottom a:visited {color: #000;}
+
+/********************************
+ HOME
+ *******************************/
+.page-template-home h4 {margin: 0 0 20px 0; color: #000; font-weight: 300; font-size: 40px; font-family: 'Oranienbaum', serif; text-align: left; text-transform: uppercase;}
+.page-template-home h2 {margin: 15px 0; width: 30%; color: #5e5d5d; font-size: 21px; font-weight: 100; font-family: 'Open Sans Condensed', sans-serif; text-transform: none; text-align: left;}
+.page-template-home h3 {margin: 40px 0 12px 0; color: #9c7f56; font-size: 22px; font-weight: 300; text-transform: uppercase; text-align: center;}
+.page-template-home .section-border {display: block; position: relative; margin: 0 auto 150px; width: 1px; height: 110px; background: #000;}
+.page-template-home header.fixed .header-top {display: none;}
+.page-template-home header {box-shadow: none;}
+.page-template-home header .header-menu {height: 200px;}
+.page-template-home header.fixed .header-menu {height: 100px;}
+.page-template-home header img.header-logop {display: none;}
+.page-template-home header.fixed img.header-logop {display: block; margin: 0 auto 20px;}
+.page-template-home .header-top {position: relative; top: 0;}
+
+/*Home-Intro*/
+#intro{display:block;position:relative;margin:0 auto;padding:0;}
+#intro .intro_content{position:relative;display:table;margin:0 auto;padding:0;width:100%}
+#intro aside{display:table-cell;position:relative;margin:0 auto;padding:0;width:33.33%;height:100%;vertical-align:top}
+#intro .intro_content .intro_bloc{position:relative;display:table;width:100%;margin:8px 4px;padding:30px 30px 100px 30px;height:100%}
+#intro .intro_content .intro_bloc h2{;margin:0 auto 25px;padding:0;width:100%;color:#373d08;font-size:24px;text-align:center}
+#intro .intro_content .intro_bloc p{text-align:center}
+#intro .intro_content .intro_bloc a.btn-c{position:absolute;margin:0;bottom:30px;left:50%;transform:translate(-50%,-50%);z-index:9}
+#intro aside .intro_img{display:block;position:relative;margin:0 auto 30px;padding:0;width:100px;height:100px;-webkit-border-radius:50%;border-radius:50%}
+#intro aside:nth-of-type(1) .intro_img,#intro aside:nth-of-type(3) .intro_img{background:#000}
+#intro aside:nth-of-type(2) .intro_img{background:#e5e4e4}
+#intro img{position:absolute;width:60px;height:auto;top:50%;left:50%;transform: translate(-50%, -50%)}
+#intro .intro_bloctexte{display:block;position:relative;margin:80px auto 40px;font-size:20px;text-align:center}
+
+/* Home - A propos */
+section#apropos {margin: 0 auto 100px;}
+#apropos aside {display: inline-block; position: relative; margin: 50px 0; padding: 0; width: 29.5%; vertical-align: top;}
+#apropos aside:nth-of-type(2) {margin-left: 5%; margin-right: 5%;}
+#apropos aside img {display: block; position: relative; margin: 0 auto; width: 100%; height: 100%; background-size: cover;}
+#apropos aside .apropos-border {content: ""; position: absolute; top: 6px; bottom: 6px; left: 6px; right: 6px; border: 1px solid #FFF; z-index: 1;}
+#apropos a.apropos-plus {display: block; position: relative; margin: 0 auto; text-align: center;}
+#apropos a.apropos-plus span {position: relative; padding: 10px 15px; width: 200px; color: #000; font-weight: 100; font-size: 14px; font-family: 'Cormorant Garamond', serif; text-align: center; text-transform: uppercase; transition: all 300ms ease-in-out 0s;}
+#apropos a.apropos-plus span:hover {background: #000; color: #FFF;}
+#apropos a.apropos-plus span::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+#apropos a.apropos-plus span::after {content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+
+
+
+/* Home - Publications */
+#publications {padding: 50px 0; background: #000;}
+#publications .text-vertical {display: block; position: absolute; top: 0; right: 20px;}
+#publications h4.title-vertical {display: block; position: relative; top: 300px; font-family: 'Oranienbaum', serif; color: #FFF; font-weight: lighter; font-size: 30px; text-transform: uppercase; z-index: 999;
+    /* this is for shity "non IE" browsers
+       that dosn't support writing-mode */
+    -webkit-transform: translate(0,0) rotate(90deg);
+       -moz-transform: translate(0,0) rotate(90deg);
+         -o-transform: translate(0,0) rotate(90deg);
+            transform: translate(0,0) rotate(90deg);
+    -webkit-transform-origin: top right;
+       -moz-transform-origin: top right;
+         -o-transform-origin: top right;
+            transform-origin: top right;
+   /* IE9+ */
+   -ms-transform: none;
+   -ms-transform-origin: none;
+   /* IE8+ */
+   -ms-writing-mode: tb-rl;
+   /* IE7 and below */
+*writing-mode: tb-rl;}
+div.scrollWrapper {position: relative; overflow: hidden; width: 100%; height: 100%;}
+div.scrollableArea {position: relative; width: auto; height: 100%;}
+#makeMeScrollable {position: relative; width:100%; height: 330px;}
+#makeMeScrollable div.scrollableArea img {position: relative; float: left; margin: 0 30px; padding: 0; width: auto; height: 330px;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+
+/* Home - Prestations */
+#prestations aside {display: inline-block; position: relative; margin-top: 50px; margin-bottom: 50px; margin-right: 5%; padding: 0; width: 20.5%; vertical-align: top; text-align: center;}
+#prestations aside:nth-of-type(4) {margin-right: 0;}
+#prestations h3 {font-family: 'Oranienbaum', serif; color: #000; font-weight: lighter; text-transform: none; font-size: 28px; text-align: center;}
+
+/* Home - Portfolio */
+#portfolio aside {display: inline-block; position: relative; margin: 80px auto 0; padding: 0; width: 25%; height: 450px; vertical-align: top;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  background-position : center center;}
+#portfolio aside a {display: flex; position: relative; margin: 0 auto; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.3);}
+#portfolio aside a .section-border {display: block; position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0); width: 1px; height: 110px; background: #FFF; z-index: 3;}
+#portfolio aside a:hover .section-border {background: #000;}
+#portfolio aside a .portfolio-background {display: block; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.3); z-index: 2;}
+#portfolio aside a:hover .portfolio-background {background-color: rgba(255, 255, 255, 0.5); color: rgba(255, 255, 255, 0.5);}
+#portfolio aside a h5 {display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Oranienbaum', serif; color: #FFF; font-weight: lighter; text-transform: uppercase; font-size: 32px; text-align: center; z-index: 3;}
+#portfolio aside a:hover h5 {color: #000;}
+#portfolio aside .section-border {margin: 0 auto;}
+
+/* Home - Boutique */
+#boutique a.homeblog-plus{display: block; position: relative; margin: 80px auto; text-align: center;}
+#boutique a.homeblog-plus span {position: relative; padding: 10px 15px; width: 200px; color: #000; font-weight: 100; font-size: 14px; font-family: 'Cormorant Garamond', serif; text-align: center; text-transform: uppercase; transition: all 300ms ease-in-out 0s;}
+#boutique a.homeblog-plus span:hover {background: #000; color: #FFF;}
+#boutique a.homeblog-plus span::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+#boutique a.homeblog-plus span::after {content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+
+/* Home - Actualités */
+#homeblog article {position: relative; display: inline-block; margin-top: 50px; margin-bottom: 50px; margin-right: 5%; padding: 0; width: 20.5%; vertical-align: top; text-align: center;}
+#homeblog article:nth-of-type(4) {margin-right: 0;}
+#homeblog h5 {margin: 10px 0; font-family: 'Oranienbaum', serif; color: #000; font-weight: lighter; font-size: 25px; text-transform: none;}
+#homeblog a.more-link {display: block; position: relative; margin: 20px auto; text-align: center;}
+#homeblog a.more-link span {position: relative; padding: 10px 15px; width: 200px; color: #000; font-weight: 100; font-size: 12px; font-family: 'Cormorant Garamond', serif; text-align: center; text-transform: uppercase; transition: all 300ms ease-in-out 0s;}
+#homeblog a.more-link span:hover {background: #000; color: #FFF;}
+#homeblog a.more-link span::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+#homeblog a.more-link span::after {content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+#homeblog a.homeblog-plus{display: block; position: relative; margin: 80px auto; text-align: center;}
+#homeblog a.homeblog-plus span {position: relative; padding: 10px 15px; width: 200px; color: #000; font-weight: 100; font-size: 14px; font-family: 'Cormorant Garamond', serif; text-align: center; text-transform: uppercase; transition: all 300ms ease-in-out 0s;}
+#homeblog a.homeblog-plus span:hover {background: #000; color: #FFF;}
+#homeblog a.homeblog-plus span::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+#homeblog a.homeblog-plus span::after {content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+#homeblog .entry-blocdate {display: block; position: relative; margin: 10px 0; width: 100%; border-top: 1px solid #000; border-bottom: 1px solid #000; color: #5e5d5d; font-family: 'Open Sans Condensed', sans-serif; font-size: 14px; font-weight: 300;}
+#homeblog .entry-blocdate1 {float: left; margin: 0; padding: 8px 20px; border-right: 1px solid #000;}
+#homeblog .entry-blocdate2 {margin: 0; padding: 8px 0;}
+
+/* Home - Newsletter */
+#newsletter {padding: 50px 0; background: #000;}
+#newsletter .text-vertical {display: block; position: absolute; top: 0; right: 20px;}
+#newsletter h4.title-vertical {display: block; position: relative; top: 235px; font-family: 'Oranienbaum', serif; color: #FFF; font-weight: lighter; font-size: 30px; text-transform: uppercase; z-index: 999;
+    /* this is for shity "non IE" browsers
+       that dosn't support writing-mode */
+    -webkit-transform: translate(0,0) rotate(90deg);
+       -moz-transform: translate(0,0) rotate(90deg);
+         -o-transform: translate(0,0) rotate(90deg);
+            transform: translate(0,0) rotate(90deg);
+    -webkit-transform-origin: top right;
+       -moz-transform-origin: top right;
+         -o-transform-origin: top right;
+            transform-origin: top right;
+   /* IE9+ */
+   -ms-transform: none;
+   -ms-transform-origin: none;
+   /* IE8+ */
+   -ms-writing-mode: tb-rl;
+   /* IE7 and below */
+*writing-mode: tb-rl;}
+#newsletter .blocsidebar {float: none; display: block; margin: 0 auto; padding: 0; width: 100%;}
+#newsletter .blocsidebar h5 {margin: 0 0 20px 0 !important; padding: 0 !important; color: #FFF !important; font-size: 30px !important; font-family: 'Oranienbaum', serif !important; font-weight: lighter !important; text-align: center !important;}
+#newsletter label {display: block; margin: 10px 0; font-family: 'Open Sans Condensed', sans-serif !important; font-size: 16px !important; color: #FFF; text-align: center;}
+#newsletter input[type="text"] {display: block; margin: 20px auto; text-align: center; width: 60%;}
+#newsletter p {display: block; position: relative; margin: 20px auto; text-align: center; color: #FFF;}
+#newsletter p:last-of-type {position: relative !important; padding: 10px 15px !important; width: 200px !important; background: none !important; border-radius: none !important; color: #FFF !important; font-weight: 100 !important; font-size: 12px !important; font-family: 'Cormorant Garamond', serif !important; text-align: center !important; text-transform: uppercase !important; transition: all 300ms ease-in-out 0s !important;}
+#newsletter p:last-of-type:hover {background: #FFF !important; color: #000 !important;}
+#newsletter p:last-of-type::before {content: "" !important; position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 10px !important; border-top: 1px solid #FFF !important; border-left: 1px solid #FFF !important; border-right: 1px solid #FFF !important; z-index: 1 !important; transition: all 300ms ease-in-out 0s !important;}
+#newsletter p:last-of-type::after {content: "" !important; position: absolute !important; bottom: 0 !important; left: 0 !important; width: 100% !important; height: 10px !important; border-bottom: 1px solid #FFF !important; border-left: 1px solid #FFF !important; border-right: 1px solid #FFF !important; z-index: 1 !important; transition: all 300ms ease-in-out 0s !important;}
+#newsletter input[type="button"] {display: block; width: 100%; padding: 0 !important; background: none !important; border-radius: none !important; color: #FFF !important; font-weight: 100 !important; font-size: 14px !important; font-family: 'Cormorant Garamond', serif !important;}
+#newsletter input[type="button"]:hover {background: none !important; border-radius: none !important; color: #000 !important;}
+
+/* Home - Contact */
+#contact aside:nth-of-type(1) {float: left; margin: 80px 80px 0 0; width: 45%;}
+#contact aside:nth-of-type(2) {float: right; margin: 80px 0 0 0; width: 45%;}
+#contact .gform_wrapper .double {display: inline-block; width: 44%;}
+#contact .gform_wrapper .input-text, #contact .gform_wrapper input[type="text"], #contact .gform_wrapper input[type="email"], #contact .gform_wrapper input[type="url"], #contact .gform_wrapper input[type="password"], #contact .gform_wrapper input[type="search"], #contact .gform_wrapper textarea {padding: 4px 4px; background: none; color: #000; font-size: 15px; font-weight: 300; font-family: 'Oranienbaum', serif; text-transform: none; box-shadow: none; -webkit-border-radius: 0; border-radius: 0; border: none; border-bottom: 1px solid #000;}
+#contact .gform_wrapper .top_label .gfield_label {color: #000; font-weight: 300; text-transform: none; font-size: 17px; font-family: 'Oranienbaum', serif;}
+#contact .gform_wrapper {margin: 0;}
+#contact .gform_wrapper ul li.gfield {margin: 0 0 50px 0 !important;}
+#contact .gform_wrapper ul li:nth-of-type(1).gfield, #contact .gform_wrapper ul li:nth-of-type(3).gfield {margin: 0 50px 50px 0 !important;}
+#contact .gform_wrapper .gfield_required {color: #000 !important;}
+#contact .gform_wrapper .top_label input.medium, #contact .gform_wrapper .top_label select.medium {width: 100% !important;}
+#contact .gform_wrapper .gform_footer {text-align: right;}
+#contact .gform_wrapper textarea.medium {height: 94px;}
+#contact .form_e {display: block; clear: both; margin: 20px 0; color: #000; font-size: 12px;}
+#contact .gform_wrapper ul.gform_fields li.gfield {padding-right: 0 !important;}
+#contact .gform_footer {display: block; position: relative !important; float: right; margin: 0 0 40px 0 !important; padding: 0 !important; width: 200px !important; height: 30px !important;background: none !important; border-radius: none !important; color: #000 !important; font-weight: 100 !important; font-size: 12px !important; font-family: 'Cormorant Garamond', serif !important; text-align: center !important; text-transform: uppercase !important; transition: all 300ms ease-in-out 0s !important;}
+#contact .gform_footer:hover {background: #FFF !important; color: #000 !important;}
+#contact .gform_footer::before {content: "" !important; position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 10px !important; border-top: 1px solid #000 !important; border-left: 1px solid #000 !important; border-right: 1px solid #000 !important; z-index: 1 !important; transition: all 300ms ease-in-out 0s !important;}
+#contact .gform_footer::after {content: "" !important; position: absolute !important; bottom: 0 !important; left: 0 !important; width: 100% !important; height: 10px !important; border-bottom: 1px solid #000 !important; border-left: 1px solid #000 !important; border-right: 1px solid #000 !important; z-index: 1 !important; transition: all 300ms ease-in-out 0s !important;}
+#contact input[type="submit"] {display: block; position: relative; width: 100%; height: 100%; padding: 0 !important; background: none !important; border-radius: none !important; color: #000 !important; font-weight: 100 !important; font-size: 14px !important; font-family: 'Cormorant Garamond', serif !important; text-transform: uppercase !important;}
+#contact input[type="submit"]:hover {background: #000 !important; border-radius: none !important; color: #FFF !important;}
+#contact aside:nth-of-type(2) p {margin: 0 0 30px 0; text-align: right; font-family: 'Open Sans Condensed', sans-serif; font-size: 18px; font-weight: 300; color: #5e5d5d;}
+#contact .social-navigation {float: right; margin: 80px 0 0 0;}
+#contact .social-navigation li {margin: 0 10px 0 0;}
+#contact .social-navigation a {padding: 1px; border: none; color: #FFF; height: 30px; width: 30px; border-radius: 0; background: #000;}
+#contact .social-navigation a::before {width: 30px; height: 30px; line-height: 30px; font-size: 20px;}
+#contact .social-navigation a:hover::before, #contact .social-navigation a:focus::before {background: #5e5d5d; color: #FFF;}
+
+/*Home-Les+*/
+#lesplus .lesplus_bloc{display:block;position:relative;margin:0 auto;padding:0}
+#lesplus .test-bloc{position:relative;display:table;margin:0 auto;padding:0;width:100%}
+#lesplus .test-bloc:nth-of-type(1){margin:50px 0 0 0}
+#lesplus .test-bloc:nth-of-type(2){margin:0}
+#lesplus .test-bloc aside{position:relative;display:table;width:100%;height:100%}
+#lesplus .test-bloc .test_texte{position:relative;display:table-cell;margin:0 auto;padding:60px 25px;width:33.33%;height:100%;vertical-align:middle}
+#lesplus .test-bloc .test_texte:nth-of-type(1){background:#000}
+#lesplus .test-bloc .test_texte:nth-of-type(2){background:#5e5d5d}
+#lesplus .test-bloc .test_texte:nth-of-type(3){background:#000}
+#lesplus .test-bloc .test_img{display:table-cell;margin:0 auto;position:relative;padding:0;width:33.33%;vertical-align:middle;height:100%}
+#lesplus .test-bloc .test_imgok{position:absolute;margin:0 auto;padding:0;width:100%;height:100%;top:0;left:0;background-position:center top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
+#lesplus .test-bloc h5{margin:0 auto 35px;color:#FFF;font-family:'Open Sans Condensed', sans-serif;font-weight:100;font-size:24px;text-transform:none;text-align:center}
+#lesplus .test-bloc p{color:#FFF;text-align:center}
+
+/* Home - Témoignages */
+section#temoignages {margin-bottom: 80px; padding-top: 80px;}
+#temoignages .swiper-container {padding: 60px 0 0 0;}
+#temoignages .temoignages_img {position: relative; display: block; margin: 0 auto; width: 134px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;}
+#temoignages .temoignages_img img.attachment-Thumbnail {position: relative; display: block; width: 134px; height: 134px; overflow:hidden; margin: 5px auto; z-index: 0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;}
+#temoignages .temoignages_title {display: block; position: relative; margin: 20px auto 30px; text-align: center; z-index: 0; color: #000; font-weight: 100; font-size: 18px; font-family: 'Oranienbaum', serif;}
+#temoignages .temoignages_title span {color: #5e5d5d; font-size: 16px;}
+#temoignages .temoignages_bloc {display: block; position: relative; margin: 0 auto 30px; width: 70%; text-align: center; color: #5e5d5d; font-weight: 100; font-size: 18px; font-family: 'Cormorant Garamond', serif; font-style: italic; z-index: 0;}
+#temoignages .temoignages_bloc:before {content: '“'; position: absolute; left: -10%; top: -10px; color: #000; font-weight: 100; font-size: 160px; font-family: 'Oranienbaum', serif;}
+#temoignages .temoignages_bloc:after {content: '”'; position: absolute; right: -10%; top: -10px; color: #000; font-weight: 100; font-size: 160px; font-family: 'Oranienbaum', serif;}
+#temoignages .swiper-pagination-bullet {background: #000 !important; opacity: 1 !important; border: 1px solid #000;}
+#temoignages .swiper-pagination-bullet-active {background: #FFF !important; opacity: 1 !important; border: 1px solid #000;}
+#temoignages .swiper-pagination {position: relative;}
+#temoignages a.homeblog-plus{display: block; position: relative; margin: 80px auto; text-align: center;}
+#temoignages a.homeblog-plus span {position: relative; padding: 10px 15px; width: 200px; color: #000; font-weight: 100; font-size: 14px; font-family: 'Cormorant Garamond', serif; text-align: center; text-transform: uppercase; transition: all 300ms ease-in-out 0s;}
+#temoignages a.homeblog-plus span:hover {background: #000; color: #FFF;}
+#temoignages a.homeblog-plus span::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+#temoignages a.homeblog-plus span::after {content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+
+
+
+/* Slider */
+#home h1 {display: block; position: relative; margin: 0 auto 20px; padding: 0; font-family: 'Open Sans Condensed', sans-serif; color: #000; font-weight: 100; font-size: 14px; text-align: center; letter-spacing: 0.5px; text-transform: none; z-index: 3; text-transform: uppercase;}
+.page-template-home .cd-hero h2 {display: block; position: relative; margin: 0 0 20px 0; padding: 0; width: 100%; font-weight: 300; color: #FFF; font-size: 60px; font-family: 'Oranienbaum', serif; text-align: center; letter-spacing: 0px; text-transform: none; text-shadow: 3px 3px 2px #000; z-index: 3;}
+.page-template-home .cd-hero h3 {display: block; position: relative; margin: 0; padding: 0; font-weight: 300; color: #FFF; font-size: 24px; font-family: 'Oranienbaum', serif; text-align: center; letter-spacing: 0px; text-transform: none; text-shadow: 3px 3px 2px #000; z-index: 3;}
+.page-template-home .cd-hero h1 {display: block; position: absolute; margin: 0; padding: 0; font-family: 'Open Sans Condensed', sans-serif; left: 50%; transform: translate(-50%, -50%); bottom : 10px; color: #FFF; font-weight: 100; font-size: 20px; text-align: center; letter-spacing: 0px; text-transform: none; text-shadow: 3px 3px 2px #000; z-index: 3;}
+
+.cd-hero .slider-background {display: block; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.3); z-index: 2;}
+
+.cd-hero {position: relative; margin: 0 auto; width: 90%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; z-index: 0;}
+.cd-hero ul {margin: 0 auto; list-style: none;}
+.cd-hero-slider {position: relative; margin: 0 auto; width: 100%; height: 750px; overflow: hidden;}
+.cd-hero-slider li {position: absolute; padding: 200px 0 0 0; top: 0; left: 0; width: 100%; height: 100%;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  background-position : center center;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);}
+
+.cd-hero-slider li.selected {
+  position: relative;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+.cd-hero-slider li.move-left {
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+.cd-hero-slider li.is-moving, .cd-hero-slider li.selected {
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+
+
+.cd-hero-slider .cd-full-width, .cd-hero-slider .cd-half-width {position: relative; margin: 0 auto; padding: 20px; width: 100%; z-index: 3;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.cd-hero-slider .cd-img-container {/* hide image on mobile device */display: none;}
+.cd-hero-slider .cd-img-container img {position: absolute; left: 50%; top: 50%; bottom: auto; right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/* Javascript disabled */
+.no-js .cd-hero-slider li {display: none;}
+.no-js .cd-hero-slider li.selected {display: block;}
+.no-js .cd-slider-nav {display: none;}
+
+/********************************
+ PAGE PUBLICATIONS
+ *******************************/
+.single-publications img.attachment-post-thumbnail {display: block; position: relative; margin: 20px auto; max-width: 300px; vertical-align: middle; height: auto;}
+.post-type-archive-publications #contenu a img {position: relative; float: left; margin: 30px; padding: 0; width: auto; height: 330px;}
+
+/********************************
+ PAGE BLOG
+ *******************************/
+.page-template-page-blog aside {display: inline-block; position: relative; margin: 80px auto 0; padding: 0; width: 20%; height: 450px; vertical-align: top;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  background-position : center center;}
+.page-template-page-blog aside a {display: flex; position: relative; margin: 0 auto; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.3);}
+.page-template-page-blog aside a .section-border {display: block; position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0); width: 1px; height: 110px; background: #FFF; z-index: 3;}
+.page-template-page-blog aside a:hover .section-border{background: #000;}
+.page-template-page-blog aside a .portfolio-background {display: block; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.3); z-index: 2;}
+.page-template-page-blog aside a:hover .portfolio-background {background-color: rgba(255, 255, 255, 0.5); color: rgba(255, 255, 255, 0.5);}
+.page-template-page-blog aside a h5 {display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Oranienbaum', serif; color: #FFF; font-weight: lighter; text-transform: uppercase; font-size: 32px; text-align: center; z-index: 3;}
+.page-template-page-blog aside a:hover h5 {color: #000;}
+.page-template-page-blog aside .section-border {margin: 0 auto;}
+
+.page-template-page-blog article {position: relative; display: inline-block; margin-top: 50px; margin-bottom: 50px; margin-right: 5%; padding: 0; width: 20.8%; vertical-align: top; text-align: center;}
+.page-template-page-blog article:nth-of-type(4) {margin-right: 0;}
+.page-template-page-blog h5 {margin: 10px 0; font-family: 'Oranienbaum', serif; color: #000; font-weight: lighter; font-size: 25px; text-transform: none;}
+.page-template-page-blog a.more-link {display: block; position: relative; margin: 20px auto; text-align: center;}
+.page-template-page-blog a.more-link span {position: relative; padding: 10px 15px; width: 200px; color: #000; font-weight: 100; font-size: 12px; font-family: 'Cormorant Garamond', serif; text-align: center; text-transform: uppercase; transition: all 300ms ease-in-out 0s;}
+.page-template-page-blog a.more-link span:hover {background: #000; color: #FFF;}
+.page-template-page-blog a.more-link span::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.page-template-page-blog a.more-link span::after {content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.page-template-page-blog a.homeblog-plus {display: block; position: relative; margin: 80px auto; text-align: center;}
+.page-template-page-blog a.homeblog-plus span {position: relative; padding: 10px 15px; width: 200px; color: #000; font-weight: 100; font-size: 14px; font-family: 'Cormorant Garamond', serif; text-align: center; text-transform: uppercase; transition: all 300ms ease-in-out 0s;}
+.page-template-page-blog a.homeblog-plus span:hover {background: #000; color: #FFF;}
+.page-template-page-blog a.homeblog-plus span::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.page-template-page-blog a.homeblog-plus span::after {content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.page-template-page-blog .entry-blocdate {display: block; position: relative; margin: 10px 0; width: 100%; border-top: 1px solid #000; border-bottom: 1px solid #000; color: #5e5d5d; font-family: 'Open Sans Condensed', sans-serif; font-size: 14px; font-weight: 300;}
+.page-template-page-blog .entry-blocdate1 {float: left; margin: 0; padding: 8px 20px; border-right: 1px solid #000;}
+.page-template-page-blog .entry-blocdate2 {margin: 0; padding: 8px 0;}
+
+/********************************
+ SINGLE BLOG
+ *******************************/
+.single-post .entry-blocdates {display: block; position: relative; margin: 10px 0; width: 450px; border-top: 1px solid #000; border-bottom: 1px solid #000; color: #5e5d5d; font-family: 'Open Sans Condensed', sans-serif; font-size: 14px; font-weight: 300;}
+.single-post .entry-blocdate1s {float: left; margin: 0; padding: 8px 20px; border-right: 1px solid #000;}
+.single-post .entry-blocdate2s {margin: 0; padding: 8px 0; text-align: center;}
+.single-post .entry-thumbail {margin: 30px 0; text-align: center;}
+.single-post .entry-thumbail img.attachment-full {max-width: 450px;}
+
+.single-post aside {display: inline-block; position: relative; margin: 80px auto 0; padding: 0; width: 20%; height: 450px; vertical-align: top;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  background-position : center center;}
+.single-post aside a {display: flex; position: relative; margin: 0 auto; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.3);}
+.single-post aside a .section-border {display: block; position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0); width: 1px; height: 110px; background: #FFF; z-index: 3;}
+.single-post aside a:hover .section-border {background: #000;}
+.single-post aside a .portfolio-background {display: block; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.3); z-index: 2;}
+.single-post aside a:hover .portfolio-background {background-color: rgba(255, 255, 255, 0.5); color: rgba(255, 255, 255, 0.5);}
+.single-post aside a h5 {display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Oranienbaum', serif; color: #FFF; font-weight: lighter; text-transform: uppercase; font-size: 32px; text-align: center; z-index: 3;}
+.single-post aside a:hover h5 {color: #000;}
+.single-post aside .section-border {margin: 0 auto;}
+
+.single-post article {position: relative; display: inline-block; margin-top: 50px; margin-bottom: 50px; margin-right: 5%; padding: 0; width: 20.8%; vertical-align: top; text-align: center;}
+.single-post article:nth-of-type(4) {margin-right: 0;}
+.single-post h5 {margin: 10px 0; font-family: 'Oranienbaum', serif; color: #000; font-weight: lighter; font-size: 25px; text-transform: none;}
+.single-post a.more-link {display: block; position: relative; margin: 20px auto; text-align: center;}
+.single-post a.more-link span {position: relative; padding: 10px 15px; width: 200px; color: #000; font-weight: 100; font-size: 12px; font-family: 'Cormorant Garamond', serif; text-align: center; text-transform: uppercase; transition: all 300ms ease-in-out 0s;}
+.single-post a.more-link span:hover {background: #000; color: #FFF;}
+.single-post a.more-link span::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.single-post a.more-link span::after {content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.single-post a.homeblog-plus{display: block; position: relative; margin: 80px auto; text-align: center;}
+.single-post a.homeblog-plus span {position: relative; padding: 10px 15px; width: 200px; color: #000; font-weight: 100; font-size: 14px; font-family: 'Cormorant Garamond', serif; text-align: center; text-transform: uppercase; transition: all 300ms ease-in-out 0s;}
+.single-post a.homeblog-plus span:hover {background: #000; color: #FFF;}
+.single-post a.homeblog-plus span::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.single-post a.homeblog-plus span::after {content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.single-post .entry-blocdate {display: block; position: relative; margin: 10px 0; width: 100%; border-top: 1px solid #000; border-bottom: 1px solid #000; color: #5e5d5d; font-family: 'Open Sans Condensed', sans-serif; font-size: 14px; font-weight: 300;}
+.single-post .entry-blocdate1 {float: left; margin: 0; padding: 8px 20px; border-right: 1px solid #000;}
+.single-post .entry-blocdate2 {margin: 0; padding: 8px 0;}
+.blog_reseaux{display:block;position:relative;margin:50px auto;text-align:center;}
+.blog_reseaux h4{text-align:center;}
+.blog_reseaux .social-navigation li{display:inline-block;float:none;}
+/********************************
+ CATEGORY
+ *******************************/
+.category aside {display: inline-block; position: relative; margin: 80px auto 0; padding: 0; width: 20%; height: 450px; vertical-align: top;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  background-position : center center;}
+.category aside a {display: flex; position: relative; margin: 0 auto; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.3);}
+.category aside a .section-border {display: block; position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0); width: 1px; height: 110px; background: #FFF; z-index: 3;}
+.category aside a:hover .section-border{background: #000;}
+.category aside a .portfolio-background {display: block; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.3); z-index: 2;}
+.category aside a:hover .portfolio-background {background-color: rgba(255, 255, 255, 0.5); color: rgba(255, 255, 255, 0.5);}
+.category aside a h5 {display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Oranienbaum', serif; color: #FFF; font-weight: lighter; text-transform: uppercase; font-size: 32px; text-align: center; z-index: 3;}
+.category aside a:hover h5 {color: #000;}
+.category aside .section-border {margin: 0 auto;}
+
+.category .article-category {position: relative; display: inline-block; margin-top: 50px; margin-bottom: 50px; margin-right: 5%; padding: 0; width: 20.8%; vertical-align: top; text-align: center;}
+.category .article-category:last-of-type {margin-right: 0;}
+.category .article-category h5 {margin: 10px 0; font-family: 'Oranienbaum', serif; color: #000; font-weight: lighter; font-size: 25px; text-transform: none;}
+.category .article-category a.more-link {display: block; position: relative; margin: 20px auto; text-align: center;}
+.category .article-category a.more-link span {position: relative; padding: 10px 15px; width: 200px; color: #000; font-weight: 100; font-size: 12px; font-family: 'Cormorant Garamond', serif; text-align: center; text-transform: uppercase; transition: all 300ms ease-in-out 0s;}
+.category .article-category a.more-link span:hover {background: #000; color: #FFF;}
+.category .article-category a.more-link span::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.category .article-category a.more-link span::after {content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.category a.homeblog-plus {display: block; position: relative; margin: 80px auto; text-align: center;}
+.category a.homeblog-plus span {position: relative; padding: 10px 15px; width: 200px; color: #000; font-weight: 100; font-size: 14px; font-family: 'Cormorant Garamond', serif; text-align: center; text-transform: uppercase; transition: all 300ms ease-in-out 0s;}
+.category a.homeblog-plus span:hover {background: #000; color: #FFF;}
+.category a.homeblog-plus span::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.category a.homeblog-plus span::after {content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.category .entry-blocdate {display: block; position: relative; margin: 10px 0; width: 100%; border-top: 1px solid #000; border-bottom: 1px solid #000; color: #5e5d5d; font-family: 'Open Sans Condensed', sans-serif; font-size: 14px; font-weight: 300;}
+.category .entry-blocdate1 {float: left; margin: 0; padding: 8px 20px; border-right: 1px solid #000;}
+.category .entry-blocdate2 {margin: 0; padding: 8px 0;}
+
+.category article {position: relative; display: inline-block; margin: 50px 30px; padding: 0; width: 20.8%; vertical-align: top; text-align: center;}
+.category h5 {margin: 10px 0; font-family: 'Oranienbaum', serif; color: #000; font-weight: lighter; font-size: 25px; text-transform: none;}
+.category a.more-link {display: block; position: relative; margin: 20px auto; text-align: center;}
+.category a.more-link span {position: relative; padding: 10px 15px; width: 200px; color: #000; font-weight: 100; font-size: 12px; font-family: 'Cormorant Garamond', serif; text-align: center; text-transform: uppercase; transition: all 300ms ease-in-out 0s;}
+.category a.more-link span:hover {background: #000; color: #FFF;}
+.category a.more-link span::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.category a.more-link span::after {content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.category .entry-blocdatec {display: block; position: relative; margin: 10px 0; width: 100%; border-top: 1px solid #000; border-bottom: 1px solid #000; color: #5e5d5d; font-family: 'Open Sans Condensed', sans-serif; font-size: 14px; font-weight: 300;}
+.category .entry-blocdate1c {float: left; margin: 0; padding: 8px 20px; border-right: 1px solid #000;}
+.category .entry-blocdate2c {margin: 0; padding: 8px 0;}
+
+/********************************
+ COMMENTAIRES 
+ *******************************/
+#comments {margin: 50px 0 0 0; padding: 40px 20px;}
+.comments-title, .comment-reply-title {border: none; margin: 0 0 10px; padding: 0; color: #9c7f56; font-family: 'Hind', sans-serif; font-size: 18px; font-weight: 300; text-transform: uppercase; text-align: center;}
+#comments input[type="submit"] {margin: 20px 0 0 0; padding: 10px 20px; background: #9c7f56; color: #FFF; font-family: 'Hind', sans-serif; font-size: 15px; font-weight: 300; text-transform: uppercase;}
+#comments input[type="submit"]:hover, #comments input[type="submit"]:focus {background: #000 !important; color: #FFF !important; box-shadow: none;}
+footer.comment-meta {background: none; text-align: left;}
+.content-left #comments article {margin: 0; border-bottom: 1px solid #FFF;}
+.comment-metadata {margin-bottom: 5px;}
+.comment-reply-link {color: #9c7f56; font-family: 'Hind', sans-serif; font-size: 13px; font-weight: 300; text-transform: uppercase;}
+.comment-reply-link:hover, .comment-reply-link:focus {border-color: #9c7f56; color: #9c7f56;}
+#comments footer {position: relative; margin: 0 0 20px 0;}
+.comment-list article, .comment-list .pingback, .comment-list .trackback {border-top: none;}
+#comments .required {color: #9c7f56;}
+.comment-form label {color: #3d3d3d; font-family: 'Hind', sans-serif; font-size: 15px; font-weight: 300; line-height: 1.2; letter-spacing: 1.2px;}
+#comments .comment-form p {margin: 0 0 40px 0;}
+
+/********************************
+ PAGINATION 
+ *******************************/
+nav.pagination {margin: 0 auto 30px !important; width: 100%;}
+.pagination {box-shadow: none; border:none;}
+.pagination .nav-links {position: relative; text-align: center; padding: 0;}
+.pagination .prev {position: absolute; top: 0; left: 0; background: none; border: 1px solid #000; color: #000;}
+.pagination::after {position: absolute; top: 0; left: 0; background: none; border: 1px solid #4e4e4e; color: #4e4e4e;}
+.pagination .nav-links::after {position: absolute; top: -1px; left: -1px; background: none; border: 1px solid #4e4e4e; color: #4e4e4e;}
+.pagination .next {position: absolute; top: 0; right: 0; background: none; border: 1px solid #000; color: #000;}
+.pagination::before {position: absolute; top: 0; right: 0; background: none; border: 1px solid #4e4e4e; color: #4e4e4e;}
+.pagination .nav-links::before {position: absolute; top: -1px; right: -1px; background: none; border: 1px solid #4e4e4e; color: #4e4e4e;}
+.pagination .prev::before {left: -3px; top: -1px;}
+.pagination .next::before {right: 1px; top: -1px;}
+.single .content-left article {padding: 0 0 30px 0;}
+.pagination .next:hover, .pagination .prev:hover {background: #000;}
+
+/*******************************************
+ BOUTON DE PARTAGE
+ *******************************************/
+.nc_socialPanelSide .nc_tweetContainer.totes, .nc_socialPanelSide .nc_tweetContainer {width: 50px !important;}
+.nc_socialPanelSide {width: 765px !important;}
+
+
+/*******************************************
+ PORTFOLIO TAXONOMY
+ *******************************************/
+.tax-type aside {display: inline-block; position: relative; margin: 80px auto 80px; padding: 0; width: 25%; height: 450px; vertical-align: top;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  background-position : center center;}
+.tax-type aside a {display: flex; position: relative; margin: 0 auto; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.3);}
+.tax-type aside a .section-border {display: block; position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0); width: 1px; height: 110px; background: #FFF; z-index: 3;}
+.tax-type aside a:hover .section-border{background: #000;}
+.tax-type aside a .portfolio-background {display: block; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.3); z-index: 2;}
+.tax-type aside a:hover .portfolio-background {background-color: rgba(255, 255, 255, 0.5); color: rgba(255, 255, 255, 0.5);}
+.tax-type aside a h5 {display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Oranienbaum', serif; color: #FFF; font-weight: lighter; text-transform: uppercase; font-size: 32px; text-align: center; z-index: 3;}
+.tax-type aside a:hover h5 {color: #000;}
+.tax-type aside .section-border {margin: 0 auto;}
+
+.tax-type .slider {margin: 100px auto; width: 100%;}
+.tax-type .slick-slide {margin: 0px 5px;}
+.tax-type .slick-slide img {width: auto; height: 500px;}
+.tax-type .slick-prev:before, .slick-next:before {color: black;}
+.tax-type .slick-slide {transition: all ease-in-out .3s; opacity: .2;}
+.tax-type .slick-active {opacity: .5;}
+.tax-type .slick-current {opacity: 1;}
+
+/*******************************************
+ PAGE LISTE CLIENT
+ *******************************************/
+.page-template-page-listeclients aside {display: inline-block; vertical-align: top;}
+.page-template-page-listeclients aside:nth-of-type(1) {margin: 0; width: 60%}
+.page-template-page-listeclients aside:nth-of-type(2) {margin: 191px 0 0 80px; width: 30%}
+.page-template-page-listeclients aside:nth-of-type(2) h1 {width: 100%; text-align: center;}
+.page-template-page-listeclients .temoignage_bloc {margin: 0 auto 100px;}
+.page-template-page-listeclients .temoignages_img {position: relative; display: block; margin: 0 auto; width: 134px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;}
+.page-template-page-listeclients .temoignages_img img.attachment-Thumbnail {position: relative; display: block; width: 134px; height: 134px; overflow:hidden; margin: 5px auto; z-index: 0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;}
+.page-template-page-listeclients .temoignages_title {display: block; position: relative; margin: 20px auto 30px; text-align: center; z-index: 0; color: #000; font-weight: 100; font-size: 18px; font-family: 'Oranienbaum', serif;}
+.page-template-page-listeclients .temoignages_title span {color: #5e5d5d; font-size: 16px;}
+.page-template-page-listeclients .temoignages_bloc {display: block; position: relative; margin: 0 auto 30px; width: 100%; text-align: center; color: #5e5d5d; font-weight: 100; font-size: 18px; font-family: 'Cormorant Garamond', serif; font-style: italic; z-index: 0;}
+
+
+.page-template-page-listeclients .client_bloc {margin: 0 auto 100px;}
+.page-template-page-listeclients .client_img {position: relative; display: block; margin: 0 auto; width: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;}
+.page-template-page-listeclients .client_img img.attachment-Thumbnail {position: relative; display: block; width: 100px; height: 100px; overflow:hidden; margin: 5px auto; z-index: 0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;}
+.page-template-page-listeclients .client_title {display: block; position: relative; margin: 20px auto 30px; text-align: center; z-index: 0; color: #000; font-weight: 100; font-size: 18px; font-family: 'Oranienbaum', serif;}
+.page-template-page-listeclients .client_title span {color: #5e5d5d; font-size: 16px;}
+.page-template-page-listeclients .client_bloc {display: inline-block; position: relative; margin: 0 auto 30px; width: 45%; text-align: center; color: #5e5d5d; font-weight: 100; font-size: 18px; font-family: 'Cormorant Garamond', serif; font-style: italic; z-index: 0; vertical-align: top;}
+
+
+
+/*******************************************
+ PAGE MARIAGE
+ *******************************************/
+.page-template-page-mariage header {position: fixed;}
+.page-template-page-mariage .main-navigation li.retourmb {font-size: 0px;}
+.page-template-page-mariage .main-navigation li.retourmb a {position: absolute; top: 0; right:0; width: 96px; height: 36px; background: url(images/photographe-mariage-pays-basque-studiomarieb.jpg) center center no-repeat;}}
+/* Mariage Slider */
+.page-template-page-mariage #mariage-home {margin: 200px auto 0 !important;}
+.page-template-page-mariage #mariage-home h1 {position: absolute; margin: 0; padding: 0; bottom: 30px; left: 50%; transform: translate(-50%); font-family: 'Open Sans Condensed', sans-serif; color: #FFF; font-weight: 100; font-size: 18px; text-align: center; letter-spacing: 0.5px; text-transform: none; z-index: 3; text-transform: uppercase;}
+.page-template-page-mariage #mariage-home .cd-hero h2 {display: block; position: relative; margin: 0 0 20px 0; padding: 0; width: 100%; font-weight: 300; color: #FFF; font-size: 60px; font-family: 'Oranienbaum', serif; text-align: center; letter-spacing: 0px; text-transform: none; text-shadow: 3px 3px 2px #000; z-index: 3;}
+.page-template-page-mariage #mariage-home .cd-hero h3 {display: block; position: relative; margin: 0; padding: 0; font-weight: 300; color: #FFF; font-size: 24px; font-family: 'Oranienbaum', serif; text-align: center; letter-spacing: 0px; text-transform: none; text-shadow: 3px 3px 2px #000; z-index: 3;}
+.page-template-page-mariage #mariage-home .slider-background {display: block; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.3); color: rgba(0, 0, 0, 0.3); z-index: 2;}
+
+/* Mariage Apropos */
+.page-template-page-mariage #mariage-apropos h2 {margin: 15px 0; width: 30%; color: #5e5d5d; font-size: 21px; font-weight: 100; font-family: 'Open Sans Condensed', sans-serif; text-transform: none; text-align: left;}
+.page-template-page-mariage #mariage-apropos aside {display: inline-block; position: relative; margin: 50px 0; padding: 0; width: 29.5%; vertical-align: top;}
+.page-template-page-mariage #mariage-apropos aside:nth-of-type(2) {margin-left: 5%; margin-right: 5%;}
+.page-template-page-mariage #mariage-apropos aside img {display: block; position: relative; margin: 0 auto; width: 100%; height: 100%; background-size: cover;}
+.page-template-page-mariage #mariage-apropos aside .apropos-border {content: ""; position: absolute; top: 6px; bottom: 6px; left: 6px; right: 6px; border: 1px solid #FFF; z-index: 1;}
+
+/* Porfolio */
+.page-template-page-mariage #mariage-portfolio h2 {margin: 15px 0; width: 30%; color: #5e5d5d; font-size: 21px; font-weight: 100; font-family: 'Open Sans Condensed', sans-serif; text-transform: none; text-align: left;}
+.page-template-page-mariage #mariage-portfolio .slider {margin: 100px auto; width: 100%;}
+.page-template-page-mariage #mariage-portfolio .slick-slide {margin: 0px 5px;}
+.page-template-page-mariage #mariage-portfolio .slick-slide img {width: auto; height: 500px;}
+.page-template-page-mariage #mariage-portfolio .slick-prev:before, .page-template-page-mariage #mariage-portfolio .slick-next:before {color: black;}
+.page-template-page-mariage #mariage-portfolio .slick-slide {transition: all ease-in-out .3s; opacity: .2;}
+.page-template-page-mariage #mariage-portfolio .slick-active {opacity: .5;}
+.page-template-page-mariage #mariage-portfolio .slick-current {opacity: 1;}
+
+/* Mariage Actualités */
+.page-template-page-mariage #mariage-blog h2 {margin: 15px 0; width: 30%; color: #5e5d5d; font-size: 21px; font-weight: 100; font-family: 'Open Sans Condensed', sans-serif; text-transform: none; text-align: left;}
+#mariage-blog article {position: relative; display: inline-block; margin-top: 50px; margin-bottom: 50px; margin-right: 5%; padding: 0; width: 20.5%; vertical-align: top; text-align: center;}
+#mariage-blog article:nth-of-type(4) {margin-right: 0;}
+#mariage-blog h5 {margin: 10px 0; font-family: 'Oranienbaum', serif; color: #000; font-weight: lighter; font-size: 25px; text-transform: none;}
+#mariage-blog a.more-link {display: block; position: relative; margin: 20px auto; text-align: center;}
+#mariage-blog a.more-link span {position: relative; padding: 10px 15px; width: 200px; color: #000; font-weight: 100; font-size: 12px; font-family: 'Cormorant Garamond', serif; text-align: center; text-transform: uppercase; transition: all 300ms ease-in-out 0s;}
+#mariage-blog a.more-link span:hover {background: #000; color: #FFF;}
+#mariage-blog a.more-link span::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+#mariage-blog a.more-link span::after {content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+#mariage-blog a.homeblog-plus{display: block; position: relative; margin: 80px auto; text-align: center;}
+#mariage-blog a.homeblog-plus span {position: relative; padding: 10px 15px; width: 200px; color: #000; font-weight: 100; font-size: 14px; font-family: 'Cormorant Garamond', serif; text-align: center; text-transform: uppercase; transition: all 300ms ease-in-out 0s;}
+#mariage-blog a.homeblog-plus span:hover {background: #000; color: #FFF;}
+#mariage-blog a.homeblog-plus span::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+#mariage-blog a.homeblog-plus span::after {content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+#mariage-blog .entry-blocdate {display: block; position: relative; margin: 10px 0; width: 100%; border-top: 1px solid #000; border-bottom: 1px solid #000; color: #5e5d5d; font-family: 'Open Sans Condensed', sans-serif; font-size: 14px; font-weight: 300;}
+#mariage-blog .entry-blocdate1 {float: left; margin: 0; padding: 8px 20px; border-right: 1px solid #000;}
+#mariage-blog .entry-blocdate2 {margin: 0; padding: 8px 0;}
+
+/* Mariage Newsletter */
+#mariage-newsletter {padding: 50px 0; background: #000;}
+#mariage-newsletter .text-vertical {display: block; position: absolute; top: 0; right: 20px;}
+#mariage-newsletter h4.title-vertical {display: block; position: relative; top: 235px; font-family: 'Oranienbaum', serif; color: #FFF; font-weight: lighter; font-size: 30px; text-transform: uppercase; z-index: 999;
+    /* this is for shity "non IE" browsers
+       that dosn't support writing-mode */
+    -webkit-transform: translate(0,0) rotate(90deg);
+       -moz-transform: translate(0,0) rotate(90deg);
+         -o-transform: translate(0,0) rotate(90deg);
+            transform: translate(0,0) rotate(90deg);
+    -webkit-transform-origin: top right;
+       -moz-transform-origin: top right;
+         -o-transform-origin: top right;
+            transform-origin: top right;
+   /* IE9+ */
+   -ms-transform: none;
+   -ms-transform-origin: none;
+   /* IE8+ */
+   -ms-writing-mode: tb-rl;
+   /* IE7 and below */
+*writing-mode: tb-rl;}
+#mariage-newsletter .blocsidebar {float: none; display: block; margin: 0 auto; padding: 0; width: 100%;}
+#mariage-newsletter .blocsidebar h5 {margin: 0 0 20px 0 !important; padding: 0 !important; color: #FFF !important; font-size: 30px !important; font-family: 'Oranienbaum', serif !important; font-weight: lighter !important; text-align: center !important;}
+#mariage-newsletter label {display: block; margin: 10px 0; font-family: 'Open Sans Condensed', sans-serif !important; font-size: 16px !important; color: #FFF; text-align: center;}
+#mariage-newsletter input[type="text"] {display: block; margin: 20px auto; text-align: center; width: 60%;}
+#mariage-newsletter p {display: block; position: relative; margin: 20px auto; text-align: center;}
+#mariage-newsletter p:last-of-type {position: relative !important; padding: 10px 15px !important; width: 200px !important; background: none !important; border-radius: none !important; color: #FFF !important; font-weight: 100 !important; font-size: 12px !important; font-family: 'Cormorant Garamond', serif !important; text-align: center !important; text-transform: uppercase !important; transition: all 300ms ease-in-out 0s !important;}
+#mariage-newsletter p:last-of-type:hover {background: #FFF !important; color: #000 !important;}
+#mariage-newsletter p:last-of-type::before {content: "" !important; position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 10px !important; border-top: 1px solid #FFF !important; border-left: 1px solid #FFF !important; border-right: 1px solid #FFF !important; z-index: 1 !important; transition: all 300ms ease-in-out 0s !important;}
+#mariage-newsletter p:last-of-type::after {content: "" !important; position: absolute !important; bottom: 0 !important; left: 0 !important; width: 100% !important; height: 10px !important; border-bottom: 1px solid #FFF !important; border-left: 1px solid #FFF !important; border-right: 1px solid #FFF !important; z-index: 1 !important; transition: all 300ms ease-in-out 0s !important;}
+#mariage-newsletter input[type="button"] {display: block; width: 100%; padding: 0 !important; background: none !important; border-radius: none !important; color: #FFF !important; font-weight: 100 !important; font-size: 14px !important; font-family: 'Cormorant Garamond', serif !important;}
+#mariage-newsletter input[type="button"]:hover {background: none !important; border-radius: none !important; color: #000 !important;}
+
+/* Mariage Contact */
+.page-template-page-mariage #mariage-contact {padding-bottom: 100px;}
+.page-template-page-mariage #mariage-contact h2 {margin: 15px 0; width: 30%; color: #5e5d5d; font-size: 21px; font-weight: 100; font-family: 'Open Sans Condensed', sans-serif; text-transform: none; text-align: left;}
+#mariage-contact aside:nth-of-type(1) {float: left; margin: 80px 80px 0 0; width: 45%;}
+#mariage-contact aside:nth-of-type(2) {float: right; margin: 80px 0 0 0; width: 45%;}
+#mariage-contact .gform_wrapper .double {display: inline-block; width: 44%;}
+#mariage-contact .gform_wrapper ul {list-style: none;}
+#mariage-contact .gform_wrapper .input-text, #mariage-contact .gform_wrapper input[type="text"], #mariage-contact .gform_wrapper input[type="email"], #mariage-contact .gform_wrapper input[type="url"], #mariage-contact .gform_wrapper input[type="password"], #mariage-contact .gform_wrapper input[type="search"], #mariage-contact .gform_wrapper textarea {padding: 4px 4px; background: none; color: #000; font-size: 15px; font-weight: 300; font-family: 'Oranienbaum', serif; text-transform: none; box-shadow: none; -webkit-border-radius: 0; border-radius: 0; border: none; border-bottom: 1px solid #000;}
+#mariage-contact .gform_wrapper .top_label .gfield_label {color: #000; font-weight: 300; text-transform: none; font-size: 17px; font-family: 'Oranienbaum', serif;}
+#mariage-contact .gform_wrapper {margin: 0;}
+#mariage-contact .gform_wrapper ul li.gfield {margin: 0 0 50px 0 !important;}
+#mariage-contact .gform_wrapper ul li:nth-of-type(1).gfield, #mariage-contact .gform_wrapper ul li:nth-of-type(3).gfield {margin: 0 50px 50px 0 !important;}
+#mariage-contact .gform_wrapper .gfield_required {color: #000 !important;}
+#mariage-contact .gform_wrapper .top_label input.medium, #mariage-contact .gform_wrapper .top_label select.medium {width: 100% !important;}
+#mariage-contact .gform_wrapper .gform_footer {text-align: right;}
+#mariage-contact .gform_wrapper textarea.medium {height: 94px;}
+#mariage-contact .form_e {display: block; clear: both; margin: 20px 0; color: #000; font-size: 12px;}
+#mariage-contact .gform_wrapper ul.gform_fields li.gfield {padding-right: 0 !important;}
+#mariage-contact .gform_footer {display: block; position: relative !important; float: right; margin: 0 0 40px 0 !important; padding: 0 !important; width: 200px !important; height: 30px !important;background: none !important; border-radius: none !important; color: #000 !important; font-weight: 100 !important; font-size: 12px !important; font-family: 'Cormorant Garamond', serif !important; text-align: center !important; text-transform: uppercase !important; transition: all 300ms ease-in-out 0s !important;}
+#mariage-contact .gform_footer:hover {background: #FFF !important; color: #000 !important;}
+#mariage-contact .gform_footer::before {content: "" !important; position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 10px !important; border-top: 1px solid #000 !important; border-left: 1px solid #000 !important; border-right: 1px solid #000 !important; z-index: 1 !important; transition: all 300ms ease-in-out 0s !important;}
+#mariage-contact .gform_footer::after {content: "" !important; position: absolute !important; bottom: 0 !important; left: 0 !important; width: 100% !important; height: 10px !important; border-bottom: 1px solid #000 !important; border-left: 1px solid #000 !important; border-right: 1px solid #000 !important; z-index: 1 !important; transition: all 300ms ease-in-out 0s !important;}
+#mariage-contact input[type="submit"] {display: block; position: relative; width: 100%; height: 100%; padding: 0 !important; background: none !important; border-radius: none !important; color: #000 !important; font-weight: 100 !important; font-size: 14px !important; font-family: 'Cormorant Garamond', serif !important; text-transform: uppercase !important;}
+#mariage-contact input[type="submit"]:hover {background: #000 !important; border-radius: none !important; color: #FFF !important;}
+#mariage-contact aside:nth-of-type(2) p {margin: 0 0 30px 0; text-align: right; font-family: 'Open Sans Condensed', sans-serif; font-size: 18px; font-weight: 300; color: #5e5d5d;}
+#mariage-contact .social-navigation {float: right; margin: 80px 0 0 0;}
+#mariage-contact .social-navigation li {margin: 0 10px 0 0;}
+#mariage-contact .social-navigation a {padding: 1px; border: none; color: #FFF; height: 30px; width: 30px; border-radius: 0; background: #000;}
+#mariage-contact .social-navigation a::before {width: 30px; height: 30px; line-height: 30px; font-size: 20px;}
+#mariage-contact .social-navigation a:hover::before, #mariage-contact .social-navigation a:focus::before {background: #5e5d5d; color: #FFF;}
+
+
+/*BOUTIQUE*/
+.shopify-buy-frame--product{max-width:100% !important}
+.shopify-buy-frame--product iframe{margin:0 auto 40px !important}
+.shopify-buy-frame--cart iframe{margin:0 auto !important}
+.shopify-buy__product{margin:20px auto !important;text-align:center !important}
+.single-boutique .shopify-buy__layout-vertical{margin:0 auto !important}
+.shopify-buy__product-description iframe{width:100% !important}
+.shopify-buy__modal{max-width:70% !important}
+.single-boutique pre{border:none !important}
+.single-boutique a.homeblog-plus{display: block; position: relative; margin: 80px auto; text-align: center;}
+.single-boutique a.homeblog-plus span {position: relative; padding: 10px 15px; width: 200px; color: #000; font-weight: 100; font-size: 14px; font-family: 'Cormorant Garamond', serif; text-align: center; text-transform: uppercase; transition: all 300ms ease-in-out 0s;}
+.single-boutique a.homeblog-plus span:hover {background: #000; color: #FFF;}
+.single-boutique a.homeblog-plus span::before {content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.single-boutique a.homeblog-plus span::after {content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; z-index: 1; transition: all 300ms ease-in-out 0s;}
+.col3{position:relative;display:flex;flex-wrap:wrap;margin:0;padding:0;width:100%}
+.col3 aside{position:relative;display:inline-block;margin:0 auto 40px;padding:0;width:33.33%}
+.col-content{position:relative;display:table;margin:0 auto;padding:0;height:100%;width:93%}
+
+
+
+/*******************************************
+ RESPONSIVE DESIGN
+ *******************************************/
+@media only screen and (min-width: 1025px) and (max-width: 1600px) { 
+    #homeblog .entry-blocdate1 {border: none;}
+    .page-template-page-blog .entry-blocdate1, .category .entry-blocdate1c, .category .entry-blocdate1, .single-post .entry-blocdate1 {border: none;}
+    #site-header-menu .wrapper{width:95%;}
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1024px) { 
+    .page-template-home h2, h1 {width: 45%;}
+    #site-header-menu .wrapper{width:99%;}
+    .main-navigation li{font-size:17px;}
+    /* Home - A propos */
+    #apropos aside {width: 28.5%;}
+
+    /* Home - Prestations */
+    #prestations h3 {font-size: 21px;}
+
+    /* Home - Blog */
+    #homeblog .entry-blocdate1 {border: none;}
+
+    /* Home - Contact */
+    #contact .gform_wrapper .double {display: inline-block; width: 41%;}
+    #contact aside:nth-of-type(2) {width: 40%;}
+
+    /* Blog */
+    .page-template-page-blog aside a h5, .category aside a h5, .single-post aside a h5 {font-size: 25px;}
+    .page-template-page-blog .entry-blocdate1, .category .entry-blocdate1c, .category .entry-blocdate1, .single-post .entry-blocdate1 {border: none;}
+
+    /* Page Client */
+    .page-template-page-listeclients aside:nth-of-type(1) {width: 50%;}
+    .page-template-page-listeclients aside:nth-of-type(2) {margin: 191px 0 0 50px; width: 30%;}
+    .page-template-page-listeclients .client_bloc {display: block; margin: 0 auto 50px; width: 100%;}
+
+}
+
+/* Mobile Landscape Size to Tablet Portrait */
+@media only screen and (min-width: 480px) and (max-width: 800px) { 
+    .wrapper {width: 95%;}
+    .page-template-home .section-border {margin: 0 auto 50px;}
+    .page-template-home h4, h4 {font-size: 30px;}
+    .page-template-home h2, h1 {width: 100%; font-size: 18px;}
+    #content {margin-bottom: 50px;}
+
+    /* Header */
+    header {box-shadow: none;}
+    header.fixed {position: relative !important; box-shadow: none !important;}
+
+    /* Footer */
+    footer {position: relative;}
+    footer .footer-top h5 {font-size: 28px;}
+
+    /* Home - Slider */
+    .cd-hero {width: 95%;}
+    .cd-hero-slider {height: 350px;}
+    .cd-hero-slider .cd-full-width, .cd-hero-slider .cd-half-width {width: 100%;}
+    .cd-hero-slider li {padding: 40px 0 0 0;}
+    .page-template-home .cd-hero h2 {font-size: 28px;}
+    .page-template-home .cd-hero h3 {font-size: 18px;}
+    .page-template-home .cd-hero h1 {width: 100%; font-size: 16px;}
+
+    /* Home - A propos */
+    #apropos aside {margin: 25px 0 0 0; display: block; width: 100%;}
+    #apropos aside:nth-of-type(2) {margin: 25px 0;}
+    #apropos a {margin: 50px auto;}
+
+    /* Home - Prestations */
+    #prestations aside {margin: 25px 0 0 0; display: block; width: 100%;}
+
+    /* Home - Portfolio */
+    #portfolio aside {margin: 0 auto; display: block; width: 100%;}
+
+    /* Home - Blog */
+    #homeblog article {margin: 50px auto; display: block; width: 100%;}
+
+    /* Home - Newsletter */
+    #newsletter .blocsidebar h5 {margin: 0 auto 20px !important; font-size: 20px !important; width: 90% !important;}
+
+    /* Home - Contact */
+    #contact aside:nth-of-type(1) {float: none; margin: 80px auto; width: 100%;}
+    #contact aside:nth-of-type(2) {float: none; margin: 80px auto; width: 100%;}
+    #contact .gform_wrapper .double {display: block; margin-right: 0; width: 100%;}
+    #contact .gform_footer {float: none !important; margin: 20px auto 50px !important;}
+    #contact aside:nth-of-type(2) p {text-align: center;}
+    #contact .social-navigation {float: none; margin: 50px auto;}
+
+    /* Home - Temoignages */
+    #temoignages .temoignages_bloc:before {left: -10%; top: -10px; font-size: 30px;}
+    #temoignages .temoignages_bloc:after {right: -10%; top: -10px; font-size: 30px;}
+
+    /* Blog */
+    .page-template-page-blog aside {margin: 0 auto; display: block; width: 100%;}
+    .page-template-page-blog article {margin: 50px auto; display: block; width: 100%;}
+    .single-post .entry-blocdates, .single-post .entry-thumbail img {width: 100% !important;}
+    .single-post aside {margin: 0 auto; display: block; width: 100%;}
+    .single-post article {margin: 50px auto; display: block; width: 100%;}
+    .category article, .category .article-category {margin: 50px auto; display: block; width: 100%;}
+    .category aside {margin: 0 auto; display: block; width: 100%;}
+
+    /* Portfolio */
+    .tax-type .slider {width: 90%;}
+    .slick-dots {bottom: -54px;}
+    .slick-dots li {width: 8px; height: 8px;}
+    .tax-type .slick-slide img {width: 480px; height: auto;}
+    .slick-prev, .slick-next {top: 22%;}
+    .tax-type aside {margin: 0 auto; display: block; width: 100%;}
+
+    /* Page Client */
+    .page-template-page-listeclients aside:nth-of-type(1), .page-template-page-listeclients aside:nth-of-type(2) {display: block; margin: 0 auto 50px; width: 100%;}
+#intro aside,#lesplus .test-bloc aside,#lesplus .test-bloc .test_texte:nth-of-type(1),#lesplus .test-bloc .test_texte:nth-of-type(2),#lesplus .test-bloc .test_texte:nth-of-type(3){display:block;width:100%}
+#lesplus .test-bloc .test_img{display:block;width:100%;height:300px}
+
+.col3 aside{display:block;width:100%;}
+} 
+
+
+/* Mobile Portrait Size to Mobile Landscape Size */
+@media only screen and (max-width: 479px) { 
+    .wrapper {width: 95%;}
+    .page-template-home .section-border {margin: 0 auto 50px;}
+    .page-template-home h4, h4 {font-size: 30px;}
+    .page-template-home h2, h1 {width: 100%; font-size: 18px;}
+    #content {margin-bottom: 50px;}
+
+    /* Header */
+    header {box-shadow: none;}
+    header.fixed {position: relative !important; box-shadow: none !important;}
+    header img.header-logo {width: 70%;}
+    .page-template-home header .header-menu {height: 120px;}
+
+    /* Footer */
+    footer {position: relative;}
+    footer .footer-top img {width: 70%;}
+    footer .footer-top h5 {font-size: 28px;}
+
+    /* Home - Slider */
+    .cd-hero {width: 95%;}
+    .cd-hero-slider {height: 350px;}
+    .cd-hero-slider .cd-full-width, .cd-hero-slider .cd-half-width {width: 100%;}
+    .cd-hero-slider li {padding: 40px 0 0 0;}
+    .page-template-home .cd-hero h2 {font-size: 28px;}
+    .page-template-home .cd-hero h3 {font-size: 18px;}
+    .page-template-home .cd-hero h1 {width: 100%; font-size: 16px;}
+
+    /* Home - A propos */
+    #apropos aside {margin: 25px 0 0 0; display: block; width: 100%;}
+    #apropos aside:nth-of-type(2) {margin: 25px 0;}
+    #apropos a {margin: 50px auto;}
+
+    /* Home - Prestations */
+    #prestations aside {margin: 25px 0 0 0; display: block; width: 100%;}
+
+    /* Home - Portfolio */
+    #portfolio aside {margin: 0 auto; display: block; width: 100%;}
+
+    /* Home - Blog */
+    #homeblog article {margin: 50px auto; display: block; width: 100%;}
+
+    /* Home - Newsletter */
+    #newsletter .blocsidebar h5 {margin: 0 auto 20px !important; font-size: 20px !important; width: 90% !important;}
+
+    /* Home - Contact */
+    #contact aside:nth-of-type(1) {float: none; margin: 80px auto; width: 100%;}
+    #contact aside:nth-of-type(2) {float: none; margin: 80px auto; width: 100%;}
+    #contact .gform_wrapper .double {display: block; margin-right: 0; width: 100%;}
+    #contact .gform_footer {float: none !important; margin: 20px auto 50px !important;}
+    #contact aside:nth-of-type(2) p {text-align: center;}
+    #contact .social-navigation {float: none; margin: 50px auto;}
+
+    /* Home - Temoignages */
+    #temoignages .temoignages_bloc:before {left: -10%; top: -10px; font-size: 30px;}
+    #temoignages .temoignages_bloc:after {right: -10%; top: -10px; font-size: 30px;}
+
+    /* Blog */
+    .page-template-page-blog aside {margin: 0 auto; display: block; width: 100%;}
+    .page-template-page-blog article {margin: 50px auto; display: block; width: 100%;}
+    .single-post .entry-blocdates, .single-post .entry-thumbail img {width: 100% !important;}
+    .single-post aside {margin: 0 auto; display: block; width: 100%;}
+    .single-post article {margin: 50px auto; display: block; width: 100%;}
+    .category article, .category .article-category {margin: 50px auto; display: block; width: 100%;}
+    .category aside {margin: 0 auto; display: block; width: 100%;}
+
+    /* Portfolio */
+    .tax-type .slider {width: 90%;}
+    .slick-dots {bottom: -54px;}
+    .slick-dots li {width: 8px; height: 8px;}
+    .tax-type .slick-slide img {width: 295px; height: auto;}
+    .slick-prev, .slick-next {top: 22%;}
+    .tax-type aside {margin: 0 auto; display: block; width: 100%;}
+
+    /* Page Client */
+    .page-template-page-listeclients aside:nth-of-type(1), .page-template-page-listeclients aside:nth-of-type(2) {display: block; margin: 0 auto 50px; width: 100%;}
+#intro aside,#lesplus .test-bloc aside,#lesplus .test-bloc .test_texte:nth-of-type(1),#lesplus .test-bloc .test_texte:nth-of-type(2),#lesplus .test-bloc .test_texte:nth-of-type(3){display:block;width:100%}
+#lesplus .test-bloc .test_img{display:block;width:100%;height:300px}
+
+.col3 aside{display:block;width:100%;}
+}

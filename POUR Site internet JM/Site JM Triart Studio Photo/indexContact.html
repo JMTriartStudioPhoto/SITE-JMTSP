@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="site internet jm">
+    <link rel="stylesheet" href="./webfiles/css/style.css">
+    <script src="./webfiles/formulaire.js" defer></script>
+
+
+    <link rel="icon"
+        href="https://www.clipartmax.com/png/small/173-1736872_fish-eye-lens-studio-pro-by-wang-haiwen-camera-lens-png.png">
+
+        <title>Site Internet JM Triart Studio Photo_Contact</title>             <!--
+                                                                            -->
+
+    </head>
+    
+    <body>
+        <header>
+            <nav>
+    
+                <ul>
+                    <li><img id="logonav" src="./src/img/Logo JM STUDIO PHOTO V2 BLANC.png" alt="Logo de JMTSP"></li>
+    
+                    <li><a href="./index.html">Accueil</a></li>
+    
+                    <li class="menu-deroulant">
+                        <a>Prestations</a>
+                            <ul class="sous-menu">
+                                <li><a href="./indexPrestationsMariage.html">Mariage</a></li>
+                                <li><a href="./indexPrestationsBapteme.html">Baptême</a></li>
+                                <li><a href="./indexPrestationsGrossesse.html">Grossesse</a></li>
+                                <li><a href="./indexPrestationsPortrait.html">Portrait</a></li>
+                                <li><a href="./indexPrestationsPhototherapie.html">Phototherapie</a></li>
+                                <li><a href="./indexPrestationsCorporate.html">Corporate</a></li>
+                                <li><a href="./indexPrestationsBoudoir.html">Boudoir</a></li>
+                            </ul>
+                    </li>
+    
+                    <li class="menu-deroulant">
+                        <a>A propos</a>
+                            <ul class="sous-menu">
+                                <li><a href="./indexcommentsepasse_SeancePhoto.html">Comment <br>se passe un shooting</a></li>
+                                <li><a href="./indexcommentsepasse_Grossesse.html">Comment <br>se passe un shooting Grossesse</a></li>
+                                <li><a href="./indexcommentsepasse_boudoir.html">Comment <br>se passe un shooting Boudoir</a></li>
+                                <li><a href="./indexcarte_cadeau.html">Bon cadeau</a></li>
+                            </ul>
+                    </li>
+    
+    
+                    <li class="menu-deroulant">
+                        <a>Tarifs</a>
+                            <ul class="sous-menu">
+                                <li><a href="./indexTarifsMariage.html">Mariage</a></li>
+                                <li><a href="./indexTarifsBapteme.html">Baptême</a></li>
+                                <li><a href="./indexTarifsGrossesse.html">Grossesse</a></li>
+                                <li><a href="./indexTarifsPortrait.html">Portrait</a></li>
+                                <li><a href="./indexTarifsPhototherapie.html">Phototherapie</a></li>
+                                <li><a href="./indexTarifsCorporate.html">Corporate</a></li>
+                                <li><a href="./indexTarifsBoudoir.html">Boudoir</a></li>
+                            </ul>
+                    </li>
+                    <li><a href="./indexContact.html" title="Redirection vers Contact">Contact</a></li>
+                    
+                    <li ><a class = "acces" href="https://www.jingoo.com/client/accessReport" title="Redirection vers Accés aux albums privés">Accés aux albums privés</a>
+                    </li>
+                </ul>
+            </nav>
+    
+        </header>
+
+
+    <main>
+
+        <div>
+            <h1 class="titre_tarifs">Contact</h1>
+        </div>  
+        <div>
+            <img class="photo_entree_cartecadeau" src="./src/img/contact.jpg">
+        </div>
+        <div>
+            <img class="logo_JMTSP_contact" src="./src/img/Logo JM STUDIO PHOTO V2.gif">
+        </div>
+                  
+
+
+        <section>  
+            
+            
+                <h1 class="sousTitre_Tarifs"> Vous voulez réserver une séance, <br>ou juste me poser une question, c'est par ici !</h1><br><br><br><br>
+            
+                    <h2 class="chapeau_cartecadeau"> via le formulaire ci-dessous ou par téléphone, <br>
+                    en me laissant un message sur mon répondeur <br>
+                    si je suis occupé, car lorsque je suis en séance ou en rendez-vous, <br>
+                    toute mon attention est réservé à mes clients.<br>
+                    Ensuite je vous rappelle pour discuter plus précisément de votre projet.   
+                  </h2>            
+        </section>
+
+
+
+         
+
+        <article><br><br><br>           
+            <div class="paragraphe_C">
+                <h3>Pour mieux vous servir je vous reçois uniquement sur rendez-vous</h3>
+                
+                <p>Laissez-moi votre message <br>
+                    par téléphone au : 06 00 00 00  <br>              
+                </p>
+
+
+                <div>
+                <img id="fee" src="./src/img/fee.png" alt="Illustration fée">
+               </div><br><br><br><br><br><br>
+                
+               <div>
+                <h1 class="Titre">Formulaire de contact</h1>
+                <p>Merci de compléter le formulaire ci-dessous pour toute demande d'information.  <br>               
+                 Si vous n'avez pas reçu de réponse dans les 72 h, pensez à vérifier vos spams.
+                </p>
+            </div>
+            </div>
+
+        </article>  
+                          
+
+         
+            <form name="myForm" action="/file.php" onsubmit="return validateForm()" method="post">
+               <table class="form-style2">
+                  <tr>
+                     <td>
+                        <label>
+                          Votre prénom  <span class="required">*</span>
+                        </label>
+                     </td>
+                     <td>
+                        <input type="text" prename="prename" class="long" placeholder="Saisissez ici votre prénom"/>
+                        <span class="error" id="errorprename"></span>
+                     </td>
+                 
+                      <td>
+                         <label>
+                            &emsp;&emsp;&emsp;&emsp;Votre nom <span class="required">*</span>
+                         </label>
+                      </td>
+                      <td>
+                         <input type="text" name="name" class="long" placeholder="Saisissez ici votre nom"/>
+                         <span class="error" id="errorname"></span>
+                      </td>
+                   </tr>
+               </table>
+      
+               <form name="myForm" action="/file.php" onsubmit="return validateForm()" method="post">
+                <table class="form-style">
+                  <tr>
+                     <td>
+                        <label>
+                           Votre adresse e-mail <span class="required">*</span>
+                        </label>
+                     </td>
+                     <td>
+                        <input type="email" name="email" class="long" placeholder="Saisissez ici votre adresse mail"/>
+                        <span class="error" id="erroremail"></span>
+                     </td>
+                  </tr>
+      
+                  <tr>
+                      <td>
+                         <label>
+                            Votre numéro de téléphone <span class="required">*</span>
+                         </label>
+                      </td>
+                      <td>
+                         <input type="tel" name="tel" class="long" placeholder="Saisissez ici votre numéro de téléphone"/>
+                         <span class="error" id="errorname"></span>
+                      </td>
+                   </tr>
+      
+                   <tr>
+                      <td>
+                         <label>
+                            Votre ville <span class="required">*</span>
+                         </label>
+                      </td>
+                      <td>
+                         <input type="ville" name="ville" class="long" placeholder="Saisissez ici votre ville"/>
+                         <span class="error" id="errorville"></span>
+                      </td>
+                   </tr>
+      
+                   <tr>
+                      <td>
+                   <div>
+                      <form action="index.html" method="GET">
+                          <!--corps du formulaire Label -->
+                          <label for="votreID">Quel séance photo avez-vous choisie ? <span class="required">*</span></label>
+                      </div>
+                      <div>	
+                          <select name="choix_de_la_prestation">
+                              <option>Mariage</option>
+                              <option>Baptême</option>
+                              <option>Grossesse</option>
+                              <option>Portrait</option>
+                              <option>Phototherapie</option>
+                              <option>Corporate</option>
+                              <option>Boudoir</option>
+                          </select>
+                      </div>
+                      </form>
+                  </td>
+              </tr>
+      
+              <tr>
+                  <td>
+                     <label>
+                        Quel autre projet avez-vous ?
+                     </label>
+                  </td>
+                  <td>
+                     <textarea name="message" class="long field-textarea" placeholder="Saisissez ici votre projet"></textarea>
+                  </td>
+               </tr>
+      
+               <tr>
+                  <td>
+                     <label>
+                      Pour une séance grossesse ou naissance, quand devez-vous accoucher ?
+                     </label>
+                     <div>	
+                      <select name="mois">
+                          <option>janvier</option>
+                          <option>Février</option>
+                          <option>Mars</option>
+                          <option>Avril</option>
+                          <option>Mai</option>
+                          <option>Juin</option>
+                          <option>Juillet</option>
+                          <option>Août</option>
+                          <option>Septembre</option>
+                          <option>Octobre</option>
+                          <option>Novembre</option>
+                          <option>Décemebre</option>
+                      </select>
+                  </div>	
+                      <select name="année">
+                          <option>2022</option>
+                          <option>2023</option>
+                          <option>2024</option>
+                          <option>2025</option>
+                      </select>
+                  </div>
+                  </td>
+               </tr>
+      
+               
+               <tr>
+                  <td>
+                     <label>
+                      Pour une séance Mariage/baptême, quant a lieu l’événement ?
+                     </label>
+                  
+                  <div>	
+                      <select name="mois">
+                          <option>janvier</option>
+                          <option>Février</option>
+                          <option>Mars</option>
+                          <option>Avril</option>
+                          <option>Mai</option>
+                          <option>Juin</option>
+                          <option>Juillet</option>
+                          <option>Août</option>
+                          <option>Septembre</option>
+                          <option>Octobre</option>
+                          <option>Novembre</option>
+                          <option>Décemebre</option>
+                      </select>
+                  </div>	
+                      <select name="année">
+                          <option>2022</option>
+                          <option>2023</option>
+                          <option>2024</option>
+                          <option>2025</option>
+                      </select>
+                  </div>
+              </td>
+               </tr>
+      
+               <tr>
+                  <td>
+                     <label>
+                      Pour une séance Mariage/baptême, où a lieu l’événement ?
+                     </label>
+                  </td>
+                  <td>
+                     <textarea name="message" class="long field-textarea" placeholder="Saisissez ici où a lieu l'événement"></textarea>
+                  </td>
+               </tr>
+      
+               <tr>
+                  <td>
+                     <label>
+                        Bon Cadeau (cliquez et choisissez si c'est une prestation offerte)<span class="required">*</span>
+                     </label>
+                  </td>
+                  <td>
+                      <select name="année">
+                          <option>Non</option>
+                          <option>Oui</option>
+                      </select>
+                  </td>
+               </tr>
+               
+               
+                  <tr>
+                     <td>
+                        <label>
+                           Message 
+                        </label>
+                     </td>
+                     <td>
+                        <textarea name="message" class="long field-textarea" placeholder="Saisissez ici votre message"></textarea>
+                        <span class="error" id="errormsg"></span>
+                     </td>
+                  </tr>
+      
+      
+                  <tr>
+                     <td></td>
+                     <td>
+                        <input type="submit" value="Envoyer">      
+                        <input type="reset" value="Réinitialiser"> 
+                     </td>
+                  </tr>
+               </table>
+            </form>      
+
+                    <img id="fee" src="./src/img/fee.png" alt="Illustration fée">
+
+
+            <!--
+                
+                    -->
+
+    </main>
+
+
+        
+
+    <footer>
+        
+        <div class="first">
+            <div class="footer1">
+
+                <h4>Informations</h4>
+                <hr/><br>
+                <p><a href="#" title="Mentions légalesPolitique">Mentions légales</a></p>
+                <hr/><br>
+                <p><a href="#" title="Politique de confidentialité">Politique de confidentialité</a></p>
+                <hr/><br>
+                <p><a href="./indexCGV.html" title="Conditions Générale de Vente">Conditions Générale de Vente</a></p>
+                <hr/><br>
+                <p><a href="#" title="Information sur le droit de rétractation">Information sur le droit de rétractation </a></p>
+                <hr/><br>
+                <br><br><br>
+                
+                <div id="accesAlbum">
+                <a href="https://www.jingoo.com/client/accessReport" title="Redirection vers Accés aux albums privés">Accés aux albums privés</a>
+                </div>
+            </div>
+            
+            
+            <div class="footer2">
+                <div>
+                    <img id= "logofooter" src="./src/img/Logo JM STUDIO PHOTO V2 BLANC.png" alt="Logo de JMTSP">
+
+                    <h3>Photographe professionnel</h3>
+
+                <div id="contact">
+                    <a href="./indexContact.html" title="redirection_contact">Contact</a>
+                </div>
+
+                    <p>Photographe spécialisée dans les reportages (mariages, <br>
+                        Baptême) le portrait, le corporate, la photothérapie, la photo <br>
+                        animalière et le boudoir. <br>
+                        Triart Jean-Michel, plus de 33 ans d’expérience dans <br>
+                        la photographie exerce son métier sur Paris et dans l’Aisne.</p><br>
+                    
+                    <img class="logo_ffpmi" src="./src/img/logoFFPMI.png" alt="logo_FFMPI">
+                    <img class="logo_artisan" src="./src/img/logoArtisan.png" alt="logo_Artisan">
+                    <img class="logo_jingoo" src="./src/img/logoJingoo.png" alt="logo_Jingoo">
+
+                </div>
+            </div>
+
+
+            <div class="footer3">
+                
+                <div>
+                    <h4>Me suivre</h4>
+                    <a href="https://www.facebook.com/jmtriart/" title="Redirection vers facebook"><img class="logo_facebook" src="./src/img/facebook.png" alt="logo_facebook"/></a>
+                    <a href="https://www.instagram.com/jmtriartstudiophoto/" title="Redirection vers instagram"><img class="logo_insta" src="./src/img/insta.png" alt="logo_instagram"/></a>
+                    <a href="https://www.linkedin.com/in/jean-michel-triart/" title="Redirection vers linkedin"><img class="logo_lin" src="./src/img/lin.png" alt="logo_in"/></a><br><br>
+                </div>
+                    <hr/><br>
+                
+                <a href="https://www.facebook.com/jmtriartPhotographyWildNature" title="Redirection vers jmtwild nature"><img class="logo_jmtwn" src="./src/img/Logo JM Triart WILD NATURE.png" alt="logo_in"/></a><br><br>
+
+
+                <p>La photographie animalière consiste <br>
+                    à prendre un cliché d'un animal, <br>
+                    ou de plusieurs, en liberté. <br>
+                    La déontologie de la photographie <br>
+                    animalière exige que l'animal soit <br>
+                    dans son milieu naturel ; qu'il n'y ait <br>
+                    aucune perturbation de la vie animale ; <br>
+                    que l'image soit une scène naturelle, <br>
+                    sans artifice.</p><br>
+
+            </div>
+        </div>
+        
+            <a class="footer4">© 2022 JM Triart Studio Photo | Tous droits réservés | Sur RDV uniquemen | Tarifs indicatifs modifiables sans préavis | Siret : 83985615000033 | Ape : 7420Z<br>
+                La reproduction et l'exploitation des images sont strictement interdite sans accord écrit du photographe | Conception : TRIART Jean-Michel.</a>
+
+    </footer>
+</body>
+
+</html>

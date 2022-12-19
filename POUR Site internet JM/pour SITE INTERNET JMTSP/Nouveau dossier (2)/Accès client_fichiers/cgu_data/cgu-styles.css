@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'robotoregular';
+    src: url('/css/fonts/roboto-regular-webfont.eot');
+    src: url('/css/fonts/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/css/fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('/css/fonts/roboto-regular-webfont.woff') format('woff'),
+         url('/css/fonts/roboto-regular-webfont.ttf') format('truetype'),
+         url('/css/fonts/roboto-regular-webfont.svg#roboto_condensedregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+html a {
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-image: none;
+    background-color: #ffffff;
+    color: #494949;
+    font-family: 'robotoregular';
+    // a,
+    // a:visited,
+    // a:link,
+    // a:active {
+    //     color: @corpo;
+    // }
+    // a:hover {
+    //     color: darken(@corpo,10%);
+    // }
+
+    //overiide styles5.css !
+    
+}
+
+h1 {
+    margin-top: 0;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+h2 {
+    margin-top: 40px;
+    font-weight: normal;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+h3 {
+    margin-top: 40px;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+
+p {
+    font-size: 14px;
+    line-height: 22px;
+    color: #494949;
+}
+
+ul li {
+    font-size: 14px;
+}
+
+a {
+    color: #68a3f3;     
+}
+a:hover {
+    color: #3D6EB9;
+}

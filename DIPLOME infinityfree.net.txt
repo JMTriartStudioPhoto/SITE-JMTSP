@@ -1,0 +1,115 @@
+DIPLOME
+
+CONNEXION / 
+Adresse web 
+infinityfree.net
+
+Nom d’utilisateur
+epiz_33224738
+
+Mot de passe
+Orlane2023
+
+SITE :
+https://fr.000webhost.com
+
+
+jmtriartstudiophotos.000webhostapp.com 
+
+MOT DE PASS
+H5yr35AWgPetrDJ
+
+------------------------------------------------
+
+Nom d'hôte: 
+ftpupload.net
+
+Port :
+21
+
+Nom d'utilisateur:
+epiz_33224738
+
+Mot de passe:
+5qcN1jo87G2RKFj
+
+----------------------------------------------------
+
+Créer une Nouvelle Base de Données
+
+Nom de la Base de données
+deploiementjm
+
+Utilisateur de la Base de données
+JM
+
+Mot de Passe
+3F7_wfo(4h(_+48@
+
+Using a new database
+
+After creating a database, you need to tell your script how to use it. 
+In a configuration file or installation wizard, it will ask for a database hostname, 
+database name, database username and database password. Here’s how you can find those settings.
+
+For the database name, username and hostname:
+
+    Login to your control panel and go to MySQL Databases.
+    Find your new database under Current Databases.
+    Copy the MySQL DB Name, MySQL User Name and MySQL Host Name to the relevant configuration fields.
+
+For the database password:
+
+    Login to the client area.
+    Click the account you created the database for.
+    Scroll down to Account Password and click Show next to the password field.
+    Copy the password from the field to the Database Password configuration field.
+
+And that’s all there is to it! That’s all your script need to know to use the database.
+
+			------------
+
+Utilisation d'une nouvelle base de données
+
+Après avoir créé une base de données, vous devez indiquer à votre script comment l'utiliser. 
+Dans un fichier de configuration ou un assistant d'installation, il demandera un nom d'hôte de base de données, 
+un nom de base de données, un nom d'utilisateur de base de données et un mot de passe de base de données. 
+Voici comment vous pouvez trouver ces paramètres.
+
+Pour le nom de la base de données, le nom d'utilisateur et le nom d'hôte :
+
+    Connectez-vous à votre panneau de contrôle et accédez aux bases de données MySQL.
+    Trouvez votre nouvelle base de données sous Bases de données actuelles.
+    Copiez le nom de la base de données MySQL, le nom d'utilisateur MySQL et le nom d'hôte MySQL 
+
+dans les champs de configuration appropriés.
+
+Pour le mot de passe de la base de données :
+
+    Connectez-vous à l'espace client.
+    Cliquez sur le compte pour lequel vous avez créé la base de données.
+    Faites défiler jusqu'à Mot de passe du compte et cliquez sur Afficher à côté du champ du mot de passe.
+    Copiez le mot de passe du champ dans le champ de configuration Mot de passe de la base de données.
+
+Et c'est tout ce qu'il y a à faire ! C'est tout ce que votre script doit savoir pour utiliser la base de données.
+-------------------------------------------------
+
+
+github.com
+Adresse web 
+https://github.com
+
+Nom d’utilisateur
+jmtriartstudiophoto@outlook.fr
+
+Mot de passe
+Orlane2023
+
+
+-----------------------------
+MEGA
+Nom d’utilisateur
+jmtriartstudiophoto@outlook.fr
+
+Mot de passe
+Orlane2023

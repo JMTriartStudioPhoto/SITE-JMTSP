@@ -1,0 +1,1837 @@
+!function(){"use strict";var n={d:function(t,e){for(var r in e)n.o(e,r)&&!n.o(t,r)&&Object.defineProperty(t,r,{enumerable:!0,get:e[r]})},o:function(n,t){return Object.prototype.hasOwnProperty.call(n,t)},r:function(n){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(n,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(n,"__esModule",{value:!0})}},t={};n.r(t),n.d(t,{actions:function(){return S},addAction:function(){return m},addFilter:function(){return p},applyFilters:function(){return k},createHooks:function(){return h},currentAction:function(){return w},currentFilter:function(){return I},defaultHooks:function(){return f},didAction:function(){return O},didFilter:function(){return j},doAction:function(){return b},doingAction:function(){return x},doingFilter:function(){return T},filters:function(){return z},hasAction:function(){return _},hasFilter:function(){return g},removeAction:function(){return A},removeAllActions:function(){return y},removeAllFilters:function(){return F},removeFilter:function(){return v}});var e=function(n){return"string"!=typeof n||""===n?(console.error("The namespace must be a non-empty string."),!1):!!/^[a-zA-Z][a-zA-Z0-9_.\-\/]*$/.test(n)||(console.error("The namespace can only contain numbers, letters, dashes, periods, underscores and slashes."),!1)},r=function(n){return"string"!=typeof n||""===n?(console.error("The hook name must be a non-empty string."),!1):/^__/.test(n)?(console.error("The hook name cannot begin with `__`."),!1):!!/^[a-zA-Z][a-zA-Z0-9_.-]*$/.test(n)||(console.error("The hook name can only contain numbers, letters, dashes, periods and underscores."),!1)},o=function(n,t){return function(o,i,c){let s=arguments.length>3&&void 0!==arguments[3]?arguments[3]:10;const u=n[t];if(!r(o))return;if(!e(i))return;if("function"!=typeof c)return void console.error("The hook callback must be a function.");if("number"!=typeof s)return void console.error("If specified, the hook priority must be a number.");const l={callback:c,priority:s,namespace:i};if(u[o]){const n=u[o].handlers;let t;for(t=n.length;t>0&&!(s>=n[t-1].priority);t--);t===n.length?n[t]=l:n.splice(t,0,l),u.__current.forEach((n=>{n.name===o&&n.currentIndex>=t&&n.currentIndex++}))}else u[o]={handlers:[l],runs:0};"hookAdded"!==o&&n.doAction("hookAdded",o,i,c,s)}},i=function(n,t){let o=arguments.length>2&&void 0!==arguments[2]&&arguments[2];return function(i,c){const s=n[t];if(!r(i))return;if(!o&&!e(c))return;if(!s[i])return 0;let u=0;if(o)u=s[i].handlers.length,s[i]={runs:s[i].runs,handlers:[]};else{const n=s[i].handlers;for(let t=n.length-1;t>=0;t--)n[t].namespace===c&&(n.splice(t,1),u++,s.__current.forEach((n=>{n.name===i&&n.currentIndex>=t&&n.currentIndex--})))}return"hookRemoved"!==i&&n.doAction("hookRemoved",i,c),u}},c=function(n,t){return function(e,r){const o=n[t];return void 0!==r?e in o&&o[e].handlers.some((n=>n.namespace===r)):e in o}},s=function(n,t){let e=arguments.length>2&&void 0!==arguments[2]&&arguments[2];return function(r){const o=n[t];o[r]||(o[r]={handlers:[],runs:0}),o[r].runs++;const i=o[r].handlers;for(var c=arguments.length,s=new Array(c>1?c-1:0),u=1;u<c;u++)s[u-1]=arguments[u];if(!i||!i.length)return e?s[0]:void 0;const l={name:r,currentIndex:0};for(o.__current.push(l);l.currentIndex<i.length;){const n=i[l.currentIndex].callback.apply(null,s);e&&(s[0]=n),l.currentIndex++}return o.__current.pop(),e?s[0]:void 0}},u=function(n,t){return function(){var e,r;const o=n[t];return null!==(e=null===(r=o.__current[o.__current.length-1])||void 0===r?void 0:r.name)&&void 0!==e?e:null}},l=function(n,t){return function(e){const r=n[t];return void 0===e?void 0!==r.__current[0]:!!r.__current[0]&&e===r.__current[0].name}},a=function(n,t){return function(e){const o=n[t];if(r(e))return o[e]&&o[e].runs?o[e].runs:0}};class d{constructor(){this.actions=Object.create(null),this.actions.__current=[],this.filters=Object.create(null),this.filters.__current=[],this.addAction=o(this,"actions"),this.addFilter=o(this,"filters"),this.removeAction=i(this,"actions"),this.removeFilter=i(this,"filters"),this.hasAction=c(this,"actions"),this.hasFilter=c(this,"filters"),this.removeAllActions=i(this,"actions",!0),this.removeAllFilters=i(this,"filters",!0),this.doAction=s(this,"actions"),this.applyFilters=s(this,"filters",!0),this.currentAction=u(this,"actions"),this.currentFilter=u(this,"filters"),this.doingAction=l(this,"actions"),this.doingFilter=l(this,"filters"),this.didAction=a(this,"actions"),this.didFilter=a(this,"filters")}}var h=function(){return new d};const f=h(),{addAction:m,addFilter:p,removeAction:A,removeFilter:v,hasAction:_,hasFilter:g,removeAllActions:y,removeAllFilters:F,doAction:b,applyFilters:k,currentAction:w,currentFilter:I,doingAction:x,doingFilter:T,didAction:O,didFilter:j,actions:S,filters:z}=f;(window.wp=window.wp||{}).hooks=t}();
+//# sourceMappingURL=index.min.js.map;
+!function(){var t={9756:function(t){t.exports=function(t,n){var e,r,o=0;function i(){var i,a,u=e,s=arguments.length;t:for(;u;){if(u.args.length===arguments.length){for(a=0;a<s;a++)if(u.args[a]!==arguments[a]){u=u.next;continue t}return u!==e&&(u===r&&(r=u.prev),u.prev.next=u.next,u.next&&(u.next.prev=u.prev),u.next=e,u.prev=null,e.prev=u,e=u),u.val}u=u.next}for(i=new Array(s),a=0;a<s;a++)i[a]=arguments[a];return u={args:i,val:t.apply(null,i)},e?(e.prev=u,u.next=e):r=u,o===n.maxSize?(r=r.prev).next=null:o++,e=u,u.val}return n=n||{},i.clear=function(){e=null,r=null,o=0},i}},124:function(t,n,e){var r;!function(){"use strict";var o={not_string:/[^s]/,not_bool:/[^t]/,not_type:/[^T]/,not_primitive:/[^v]/,number:/[diefg]/,numeric_arg:/[bcdiefguxX]/,json:/[j]/,not_json:/[^j]/,text:/^[^\x25]+/,modulo:/^\x25{2}/,placeholder:/^\x25(?:([1-9]\d*)\$|\(([^\)]+)\))?(\+)?(0|'[^$])?(-)?(\d+)?(?:\.(\d+))?([b-gijostTuvxX])/,key:/^([a-z_][a-z_\d]*)/i,key_access:/^\.([a-z_][a-z_\d]*)/i,index_access:/^\[(\d+)\]/,sign:/^[\+\-]/};function i(t){return u(l(t),arguments)}function a(t,n){return i.apply(null,[t].concat(n||[]))}function u(t,n){var e,r,a,u,s,l,c,f,p,d=1,g=t.length,h="";for(r=0;r<g;r++)if("string"==typeof t[r])h+=t[r];else if(Array.isArray(t[r])){if((u=t[r])[2])for(e=n[d],a=0;a<u[2].length;a++){if(!e.hasOwnProperty(u[2][a]))throw new Error(i('[sprintf] property "%s" does not exist',u[2][a]));e=e[u[2][a]]}else e=u[1]?n[u[1]]:n[d++];if(o.not_type.test(u[8])&&o.not_primitive.test(u[8])&&e instanceof Function&&(e=e()),o.numeric_arg.test(u[8])&&"number"!=typeof e&&isNaN(e))throw new TypeError(i("[sprintf] expecting number but found %T",e));switch(o.number.test(u[8])&&(f=e>=0),u[8]){case"b":e=parseInt(e,10).toString(2);break;case"c":e=String.fromCharCode(parseInt(e,10));break;case"d":case"i":e=parseInt(e,10);break;case"j":e=JSON.stringify(e,null,u[6]?parseInt(u[6]):0);break;case"e":e=u[7]?parseFloat(e).toExponential(u[7]):parseFloat(e).toExponential();break;case"f":e=u[7]?parseFloat(e).toFixed(u[7]):parseFloat(e);break;case"g":e=u[7]?String(Number(e.toPrecision(u[7]))):parseFloat(e);break;case"o":e=(parseInt(e,10)>>>0).toString(8);break;case"s":e=String(e),e=u[7]?e.substring(0,u[7]):e;break;case"t":e=String(!!e),e=u[7]?e.substring(0,u[7]):e;break;case"T":e=Object.prototype.toString.call(e).slice(8,-1).toLowerCase(),e=u[7]?e.substring(0,u[7]):e;break;case"u":e=parseInt(e,10)>>>0;break;case"v":e=e.valueOf(),e=u[7]?e.substring(0,u[7]):e;break;case"x":e=(parseInt(e,10)>>>0).toString(16);break;case"X":e=(parseInt(e,10)>>>0).toString(16).toUpperCase()}o.json.test(u[8])?h+=e:(!o.number.test(u[8])||f&&!u[3]?p="":(p=f?"+":"-",e=e.toString().replace(o.sign,"")),l=u[4]?"0"===u[4]?"0":u[4].charAt(1):" ",c=u[6]-(p+e).length,s=u[6]&&c>0?l.repeat(c):"",h+=u[5]?p+e+s:"0"===l?p+s+e:s+p+e)}return h}var s=Object.create(null);function l(t){if(s[t])return s[t];for(var n,e=t,r=[],i=0;e;){if(null!==(n=o.text.exec(e)))r.push(n[0]);else if(null!==(n=o.modulo.exec(e)))r.push("%");else{if(null===(n=o.placeholder.exec(e)))throw new SyntaxError("[sprintf] unexpected placeholder");if(n[2]){i|=1;var a=[],u=n[2],l=[];if(null===(l=o.key.exec(u)))throw new SyntaxError("[sprintf] failed to parse named argument key");for(a.push(l[1]);""!==(u=u.substring(l[0].length));)if(null!==(l=o.key_access.exec(u)))a.push(l[1]);else{if(null===(l=o.index_access.exec(u)))throw new SyntaxError("[sprintf] failed to parse named argument key");a.push(l[1])}n[2]=a}else i|=2;if(3===i)throw new Error("[sprintf] mixing positional and named placeholders is not (yet) supported");r.push(n)}e=e.substring(n[0].length)}return s[t]=r}n.sprintf=i,n.vsprintf=a,"undefined"!=typeof window&&(window.sprintf=i,window.vsprintf=a,void 0===(r=function(){return{sprintf:i,vsprintf:a}}.call(n,e,n,t))||(t.exports=r))}()}},n={};function e(r){var o=n[r];if(void 0!==o)return o.exports;var i=n[r]={exports:{}};return t[r](i,i.exports,e),i.exports}e.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(n,{a:n}),n},e.d=function(t,n){for(var r in n)e.o(n,r)&&!e.o(t,r)&&Object.defineProperty(t,r,{enumerable:!0,get:n[r]})},e.o=function(t,n){return Object.prototype.hasOwnProperty.call(t,n)},e.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})};var r={};!function(){"use strict";e.r(r),e.d(r,{__:function(){return __},_n:function(){return _n},_nx:function(){return _nx},_x:function(){return _x},createI18n:function(){return x},defaultI18n:function(){return _},getLocaleData:function(){return m},hasTranslation:function(){return L},isRTL:function(){return S},resetLocaleData:function(){return F},setLocaleData:function(){return w},sprintf:function(){return u},subscribe:function(){return k}});var t=e(9756),n=e.n(t),o=e(124),i=e.n(o);const a=n()(console.error);function u(t){try{for(var n=arguments.length,e=new Array(n>1?n-1:0),r=1;r<n;r++)e[r-1]=arguments[r];return i().sprintf(t,...e)}catch(n){return n instanceof Error&&a("sprintf error: \n\n"+n.toString()),t}}var s,l,c,f;s={"(":9,"!":8,"*":7,"/":7,"%":7,"+":6,"-":6,"<":5,"<=":5,">":5,">=":5,"==":4,"!=":4,"&&":3,"||":2,"?":1,"?:":1},l=["(","?"],c={")":["("],":":["?","?:"]},f=/<=|>=|==|!=|&&|\|\||\?:|\(|!|\*|\/|%|\+|-|<|>|\?|\)|:/;var p={"!":function(t){return!t},"*":function(t,n){return t*n},"/":function(t,n){return t/n},"%":function(t,n){return t%n},"+":function(t,n){return t+n},"-":function(t,n){return t-n},"<":function(t,n){return t<n},"<=":function(t,n){return t<=n},">":function(t,n){return t>n},">=":function(t,n){return t>=n},"==":function(t,n){return t===n},"!=":function(t,n){return t!==n},"&&":function(t,n){return t&&n},"||":function(t,n){return t||n},"?:":function(t,n,e){if(t)throw n;return e}};var d={contextDelimiter:"",onMissingKey:null};function g(t,n){var e;for(e in this.data=t,this.pluralForms={},this.options={},d)this.options[e]=void 0!==n&&e in n?n[e]:d[e]}g.prototype.getPluralForm=function(t,n){var e,r,o,i,a=this.pluralForms[t];return a||("function"!=typeof(o=(e=this.data[t][""])["Plural-Forms"]||e["plural-forms"]||e.plural_forms)&&(r=function(t){var n,e,r;for(n=t.split(";"),e=0;e<n.length;e++)if(0===(r=n[e].trim()).indexOf("plural="))return r.substr(7)}(e["Plural-Forms"]||e["plural-forms"]||e.plural_forms),i=function(t){var n=function(t){for(var n,e,r,o,i=[],a=[];n=t.match(f);){for(e=n[0],(r=t.substr(0,n.index).trim())&&i.push(r);o=a.pop();){if(c[e]){if(c[e][0]===o){e=c[e][1]||e;break}}else if(l.indexOf(o)>=0||s[o]<s[e]){a.push(o);break}i.push(o)}c[e]||a.push(e),t=t.substr(n.index+e.length)}return(t=t.trim())&&i.push(t),i.concat(a.reverse())}(t);return function(t){return function(t,n){var e,r,o,i,a,u,s=[];for(e=0;e<t.length;e++){if(a=t[e],i=p[a]){for(r=i.length,o=Array(r);r--;)o[r]=s.pop();try{u=i.apply(null,o)}catch(t){return t}}else u=n.hasOwnProperty(a)?n[a]:+a;s.push(u)}return s[0]}(n,t)}}(r),o=function(t){return+i({n:t})}),a=this.pluralForms[t]=o),a(n)},g.prototype.dcnpgettext=function(t,n,e,r,o){var i,a,u;return i=void 0===o?0:this.getPluralForm(t,o),a=e,n&&(a=n+this.options.contextDelimiter+e),(u=this.data[t][a])&&u[i]?u[i]:(this.options.onMissingKey&&this.options.onMissingKey(e,t),0===i?e:r)};const h={plural_forms:t=>1===t?0:1},v=/^i18n\.(n?gettext|has_translation)(_|$)/,x=(t,n,e)=>{const r=new g({}),o=new Set,i=()=>{o.forEach((t=>t()))},a=function(t){var n;let e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"default";r.data[e]={...r.data[e],...t},r.data[e][""]={...h,...null===(n=r.data[e])||void 0===n?void 0:n[""]},delete r.pluralForms[e]},u=(t,n)=>{a(t,n),i()},s=function(){let t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"default",n=arguments.length>1?arguments[1]:void 0,e=arguments.length>2?arguments[2]:void 0,o=arguments.length>3?arguments[3]:void 0,i=arguments.length>4?arguments[4]:void 0;return r.data[t]||a(void 0,t),r.dcnpgettext(t,n,e,o,i)},l=function(){let t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"default";return t},_x=(t,n,r)=>{let o=s(r,n,t);return e?(o=e.applyFilters("i18n.gettext_with_context",o,t,n,r),e.applyFilters("i18n.gettext_with_context_"+l(r),o,t,n,r)):o};if(t&&u(t,n),e){const t=t=>{v.test(t)&&i()};e.addAction("hookAdded","core/i18n",t),e.addAction("hookRemoved","core/i18n",t)}return{getLocaleData:function(){let t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"default";return r.data[t]},setLocaleData:u,addLocaleData:function(t){var n;let e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"default";r.data[e]={...r.data[e],...t,"":{...h,...null===(n=r.data[e])||void 0===n?void 0:n[""],...null==t?void 0:t[""]}},delete r.pluralForms[e],i()},resetLocaleData:(t,n)=>{r.data={},r.pluralForms={},u(t,n)},subscribe:t=>(o.add(t),()=>o.delete(t)),__:(t,n)=>{let r=s(n,void 0,t);return e?(r=e.applyFilters("i18n.gettext",r,t,n),e.applyFilters("i18n.gettext_"+l(n),r,t,n)):r},_x:_x,_n:(t,n,r,o)=>{let i=s(o,void 0,t,n,r);return e?(i=e.applyFilters("i18n.ngettext",i,t,n,r,o),e.applyFilters("i18n.ngettext_"+l(o),i,t,n,r,o)):i},_nx:(t,n,r,o,i)=>{let a=s(i,o,t,n,r);return e?(a=e.applyFilters("i18n.ngettext_with_context",a,t,n,r,o,i),e.applyFilters("i18n.ngettext_with_context_"+l(i),a,t,n,r,o,i)):a},isRTL:()=>"rtl"===_x("ltr","text direction"),hasTranslation:(t,n,o)=>{var i,a;const u=n?n+""+t:t;let s=!(null===(i=r.data)||void 0===i||null===(a=i[null!=o?o:"default"])||void 0===a||!a[u]);return e&&(s=e.applyFilters("i18n.has_translation",s,t,n,o),s=e.applyFilters("i18n.has_translation_"+l(o),s,t,n,o)),s}}};var b=window.wp.hooks;const y=x(void 0,void 0,b.defaultHooks);var _=y;const m=y.getLocaleData.bind(y),w=y.setLocaleData.bind(y),F=y.resetLocaleData.bind(y),k=y.subscribe.bind(y),__=y.__.bind(y),_x=y._x.bind(y),_n=y._n.bind(y),_nx=y._nx.bind(y),S=y.isRTL.bind(y),L=y.hasTranslation.bind(y)}(),(window.wp=window.wp||{}).i18n=r}();
+//# sourceMappingURL=index.min.js.map;
+!function(){"use strict";var e={d:function(t,n){for(var o in n)e.o(n,o)&&!e.o(t,o)&&Object.defineProperty(t,o,{enumerable:!0,get:n[o]})},o:function(e,t){return Object.prototype.hasOwnProperty.call(e,t)}},t={};function n(e){"undefined"!=typeof document&&("complete"!==document.readyState&&"interactive"!==document.readyState?document.addEventListener("DOMContentLoaded",e):e())}e.d(t,{default:function(){return n}}),(window.wp=window.wp||{}).domReady=t.default}();
+//# sourceMappingURL=index.min.js.map;
+!function(){"use strict";var e={d:function(n,t){for(var r in t)e.o(t,r)&&!e.o(n,r)&&Object.defineProperty(n,r,{enumerable:!0,get:t[r]})},o:function(e,n){return Object.prototype.hasOwnProperty.call(e,n)},r:function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}},n={};e.r(n),e.d(n,{escapeAmpersand:function(){return r},escapeAttribute:function(){return c},escapeEditableHTML:function(){return a},escapeHTML:function(){return i},escapeLessThan:function(){return o},escapeQuotationMark:function(){return u},isValidAttributeName:function(){return f}});const t=/[\u007F-\u009F "'>/="\uFDD0-\uFDEF]/;function r(e){return e.replace(/&(?!([a-z0-9]+|#[0-9]+|#x[a-f0-9]+);)/gi,"&amp;")}function u(e){return e.replace(/"/g,"&quot;")}function o(e){return e.replace(/</g,"&lt;")}function c(e){return function(e){return e.replace(/>/g,"&gt;")}(u(r(e)))}function i(e){return o(r(e))}function a(e){return o(e.replace(/&/g,"&amp;"))}function f(e){return!t.test(e)}(window.wp=window.wp||{}).escapeHtml=n}();
+//# sourceMappingURL=index.min.js.map;
+!function(){var e,t,n,r,i,o,s={35702:function(e,t){"use strict";var n=function(){if("undefined"!=typeof Map)return Map;function e(e,t){var n=-1;return e.some((function(e,r){return e[0]===t&&(n=r,!0)})),n}return function(){function t(){this.__entries__=[]}return Object.defineProperty(t.prototype,"size",{get:function(){return this.__entries__.length},enumerable:!0,configurable:!0}),t.prototype.get=function(t){var n=e(this.__entries__,t),r=this.__entries__[n];return r&&r[1]},t.prototype.set=function(t,n){var r=e(this.__entries__,t);~r?this.__entries__[r][1]=n:this.__entries__.push([t,n])},t.prototype.delete=function(t){var n=this.__entries__,r=e(n,t);~r&&n.splice(r,1)},t.prototype.has=function(t){return!!~e(this.__entries__,t)},t.prototype.clear=function(){this.__entries__.splice(0)},t.prototype.forEach=function(e,t){void 0===t&&(t=null);for(var n=0,r=this.__entries__;n<r.length;n++){var i=r[n];e.call(t,i[1],i[0])}},t}()}(),r="undefined"!=typeof window&&"undefined"!=typeof document&&window.document===document,i="undefined"!=typeof window&&window.Math===Math?window:"undefined"!=typeof self&&self.Math===Math?self:"undefined"!=typeof window&&window.Math===Math?window:Function("return this")(),o="function"==typeof requestAnimationFrame?requestAnimationFrame.bind(i):function(e){return setTimeout((function(){return e(Date.now())}),1e3/60)};var s=["top","right","bottom","left","width","height","size","weight"],a="undefined"!=typeof MutationObserver,c=function(){function e(){this.connected_=!1,this.mutationEventsAdded_=!1,this.mutationsObserver_=null,this.observers_=[],this.onTransitionEnd_=this.onTransitionEnd_.bind(this),this.refresh=function(e,t){var n=!1,r=!1,i=0;function s(){n&&(n=!1,e()),r&&c()}function a(){o(s)}function c(){var e=Date.now();if(n){if(e-i<2)return;r=!0}else n=!0,r=!1,setTimeout(a,t);i=e}return c}(this.refresh.bind(this),20)}return e.prototype.addObserver=function(e){~this.observers_.indexOf(e)||this.observers_.push(e),this.connected_||this.connect_()},e.prototype.removeObserver=function(e){var t=this.observers_,n=t.indexOf(e);~n&&t.splice(n,1),!t.length&&this.connected_&&this.disconnect_()},e.prototype.refresh=function(){this.updateObservers_()&&this.refresh()},e.prototype.updateObservers_=function(){var e=this.observers_.filter((function(e){return e.gatherActive(),e.hasActive()}));return e.forEach((function(e){return e.broadcastActive()})),e.length>0},e.prototype.connect_=function(){r&&!this.connected_&&(document.addEventListener("transitionend",this.onTransitionEnd_),window.addEventListener("resize",this.refresh),a?(this.mutationsObserver_=new MutationObserver(this.refresh),this.mutationsObserver_.observe(document,{attributes:!0,childList:!0,characterData:!0,subtree:!0})):(document.addEventListener("DOMSubtreeModified",this.refresh),this.mutationEventsAdded_=!0),this.connected_=!0)},e.prototype.disconnect_=function(){r&&this.connected_&&(document.removeEventListener("transitionend",this.onTransitionEnd_),window.removeEventListener("resize",this.refresh),this.mutationsObserver_&&this.mutationsObserver_.disconnect(),this.mutationEventsAdded_&&document.removeEventListener("DOMSubtreeModified",this.refresh),this.mutationsObserver_=null,this.mutationEventsAdded_=!1,this.connected_=!1)},e.prototype.onTransitionEnd_=function(e){var t=e.propertyName,n=void 0===t?"":t;s.some((function(e){return!!~n.indexOf(e)}))&&this.refresh()},e.getInstance=function(){return this.instance_||(this.instance_=new e),this.instance_},e.instance_=null,e}(),u=function(e,t){for(var n=0,r=Object.keys(t);n<r.length;n++){var i=r[n];Object.defineProperty(e,i,{value:t[i],enumerable:!1,writable:!1,configurable:!0})}return e},l=function(e){return e&&e.ownerDocument&&e.ownerDocument.defaultView||i},f=m(0,0,0,0);function d(e){return parseFloat(e)||0}function h(e){for(var t=[],n=1;n<arguments.length;n++)t[n-1]=arguments[n];return t.reduce((function(t,n){return t+d(e["border-"+n+"-width"])}),0)}function p(e){var t=e.clientWidth,n=e.clientHeight;if(!t&&!n)return f;var r=l(e).getComputedStyle(e),i=function(e){for(var t={},n=0,r=["top","right","bottom","left"];n<r.length;n++){var i=r[n],o=e["padding-"+i];t[i]=d(o)}return t}(r),o=i.left+i.right,s=i.top+i.bottom,a=d(r.width),c=d(r.height);if("border-box"===r.boxSizing&&(Math.round(a+o)!==t&&(a-=h(r,"left","right")+o),Math.round(c+s)!==n&&(c-=h(r,"top","bottom")+s)),!function(e){return e===l(e).document.documentElement}(e)){var u=Math.round(a+o)-t,p=Math.round(c+s)-n;1!==Math.abs(u)&&(a-=u),1!==Math.abs(p)&&(c-=p)}return m(i.left,i.top,a,c)}var v="undefined"!=typeof SVGGraphicsElement?function(e){return e instanceof l(e).SVGGraphicsElement}:function(e){return e instanceof l(e).SVGElement&&"function"==typeof e.getBBox};function b(e){return r?v(e)?function(e){var t=e.getBBox();return m(0,0,t.width,t.height)}(e):p(e):f}function m(e,t,n,r){return{x:e,y:t,width:n,height:r}}var w=function(){function e(e){this.broadcastWidth=0,this.broadcastHeight=0,this.contentRect_=m(0,0,0,0),this.target=e}return e.prototype.isActive=function(){var e=b(this.target);return this.contentRect_=e,e.width!==this.broadcastWidth||e.height!==this.broadcastHeight},e.prototype.broadcastRect=function(){var e=this.contentRect_;return this.broadcastWidth=e.width,this.broadcastHeight=e.height,e},e}(),y=function(e,t){var n,r,i,o,s,a,c,l=(r=(n=t).x,i=n.y,o=n.width,s=n.height,a="undefined"!=typeof DOMRectReadOnly?DOMRectReadOnly:Object,c=Object.create(a.prototype),u(c,{x:r,y:i,width:o,height:s,top:i,right:r+o,bottom:s+i,left:r}),c);u(this,{target:e,contentRect:l})},_=function(){function e(e,t,r){if(this.activeObservations_=[],this.observations_=new n,"function"!=typeof e)throw new TypeError("The callback provided as parameter 1 is not a function.");this.callback_=e,this.controller_=t,this.callbackCtx_=r}return e.prototype.observe=function(e){if(!arguments.length)throw new TypeError("1 argument required, but only 0 present.");if("undefined"!=typeof Element&&Element instanceof Object){if(!(e instanceof l(e).Element))throw new TypeError('parameter 1 is not of type "Element".');var t=this.observations_;t.has(e)||(t.set(e,new w(e)),this.controller_.addObserver(this),this.controller_.refresh())}},e.prototype.unobserve=function(e){if(!arguments.length)throw new TypeError("1 argument required, but only 0 present.");if("undefined"!=typeof Element&&Element instanceof Object){if(!(e instanceof l(e).Element))throw new TypeError('parameter 1 is not of type "Element".');var t=this.observations_;t.has(e)&&(t.delete(e),t.size||this.controller_.removeObserver(this))}},e.prototype.disconnect=function(){this.clearActive(),this.observations_.clear(),this.controller_.removeObserver(this)},e.prototype.gatherActive=function(){var e=this;this.clearActive(),this.observations_.forEach((function(t){t.isActive()&&e.activeObservations_.push(t)}))},e.prototype.broadcastActive=function(){if(this.hasActive()){var e=this.callbackCtx_,t=this.activeObservations_.map((function(e){return new y(e.target,e.broadcastRect())}));this.callback_.call(e,t,e),this.clearActive()}},e.prototype.clearActive=function(){this.activeObservations_.splice(0)},e.prototype.hasActive=function(){return this.activeObservations_.length>0},e}(),g="undefined"!=typeof WeakMap?new WeakMap:new n,E=function e(t){if(!(this instanceof e))throw new TypeError("Cannot call a class as a function.");if(!arguments.length)throw new TypeError("1 argument required, but only 0 present.");var n=c.getInstance(),r=new _(t,n,this);g.set(this,r)};["observe","unobserve","disconnect"].forEach((function(e){E.prototype[e]=function(){var t;return(t=g.get(this))[e].apply(t,arguments)}}));var O=void 0!==i.ResizeObserver?i.ResizeObserver:E;t.Z=O},81178:function(e,t,n){"use strict";n.d(t,{Z:function(){return i}});var r=n(92819);async function i(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:".swiper-container",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};const o={effect:"slide",grabCursor:!0,init:!0,initialSlide:0,navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"},pagination:{bulletElement:"button",clickable:!0,el:".swiper-pagination",type:"bullets"},preventClicks:!1,preventClicksPropagation:!1,releaseFormElements:!1,setWrapperSize:!0,threshold:5,touchStartPreventDefault:!1,on:(0,r.mapValues)(i,(e=>function(){e(this)}))},[{default:s}]=await Promise.all([Promise.all([n.e(387),n.e(390)]).then(n.t.bind(n,39447,23)),Promise.all([n.e(387),n.e(390)]).then(n.bind(n,38642))]);return new s(e,(0,r.merge)({},o,t))}},20937:function(e,t,n){"use strict";n.d(t,{$m:function(){return a},HV:function(){return c},UA:function(){return s},Wj:function(){return u}});var r=n(81975),i=n(92819);const o="wp-block-jetpack-slideshow_autoplay-paused";function s(e){a(e),c(e);document.querySelector("body").dispatchEvent(new Event("jetpack-lazy-images-load")),e.el.querySelector(".wp-block-jetpack-slideshow_button-pause").addEventListener("click",(function(){e.el&&(e.el.classList.contains(o)?(e.el.classList.remove(o),e.autoplay.start(),this.setAttribute("aria-label","Pause Slideshow")):(e.el.classList.add(o),e.autoplay.stop(),this.setAttribute("aria-label","Play Slideshow")))}))}function a(e){if(!e||!e.el)return;const t=e.el.querySelector('.swiper-slide[data-swiper-slide-index="0"] img');if(!t)return;const n=t.clientWidth/t.clientHeight,r=Math.max(Math.min(n,1.7777777777777777),1),i="undefined"!=typeof window?.8*window.innerHeight:600,o=Math.min(e.width/r,i),s=`${Math.floor(o)}px`,a=`${Math.floor(o/2)}px`;e.el.classList.add("wp-swiper-initialized"),e.wrapperEl.style.height=s,e.el.querySelector(".wp-block-jetpack-slideshow_button-prev").style.top=a,e.el.querySelector(".wp-block-jetpack-slideshow_button-next").style.top=a}function c(e){(0,i.forEach)(e.slides,((t,n)=>{t.setAttribute("aria-hidden",n===e.activeIndex?"false":"true"),n===e.activeIndex?t.setAttribute("tabindex","-1"):t.removeAttribute("tabindex")})),function(e){const t=e.slides[e.activeIndex];if(!t)return;const n=t.getElementsByTagName("FIGCAPTION")[0],i=t.getElementsByTagName("IMG")[0];e.a11y.liveRegion&&(e.a11y.liveRegion[0].innerHTML=n?n.innerHTML:(0,r.escapeHTML)(i.alt))}(e)}function u(e){(0,i.forEach)(e.pagination.bullets,(t=>{t.addEventListener("click",(()=>{const t=e.slides[e.realIndex];setTimeout((()=>{t.focus()}),500)}))}))}},72195:function(e,t,n){"object"==typeof window&&window.Jetpack_Block_Assets_Base_Url&&window.Jetpack_Block_Assets_Base_Url.url&&(n.p=window.Jetpack_Block_Assets_Base_Url.url)},92819:function(e){"use strict";e.exports=window.lodash},47701:function(e){"use strict";e.exports=window.wp.domReady},81975:function(e){"use strict";e.exports=window.wp.escapeHtml}},a={};function c(e){var t=a[e];if(void 0!==t)return t.exports;var n=a[e]={exports:{}};return s[e].call(n.exports,n,n.exports,c),n.exports}c.m=s,c.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return c.d(t,{a:t}),t},t=Object.getPrototypeOf?function(e){return Object.getPrototypeOf(e)}:function(e){return e.__proto__},c.t=function(n,r){if(1&r&&(n=this(n)),8&r)return n;if("object"==typeof n&&n){if(4&r&&n.__esModule)return n;if(16&r&&"function"==typeof n.then)return n}var i=Object.create(null);c.r(i);var o={};e=e||[null,t({}),t([]),t(t)];for(var s=2&r&&n;"object"==typeof s&&!~e.indexOf(s);s=t(s))Object.getOwnPropertyNames(s).forEach((function(e){o[e]=function(){return n[e]}}));return o.default=function(){return n},c.d(i,o),i},c.d=function(e,t){for(var n in t)c.o(t,n)&&!c.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},c.f={},c.e=function(e){return Promise.all(Object.keys(c.f).reduce((function(t,n){return c.f[n](e,t),t}),[]))},c.u=function(e){return(390===e?"swiper":e)+".js?minify=false&ver="+{387:"e3d10b178e25ec1418d4",390:"e97a60781e1543c44f3c"}[e]},c.miniCssF=function(e){return"swiper.css?minify=false&ver=eacdc1a03fc9a7e72e14"},function(){if(!c.miniCssF)throw new Error("MiniCSSWithRTLPlugin was loaded before MiniCSSExtractPlugin");var e;c.miniCssF=(e=c.miniCssF,function(t){var n="rtl"===document.dir,r=e(t);return n?r.replace(/\.css(?:$|\?)/,".rtl$&"):r})}(),c.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"==typeof window)return window}}(),c.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n={},r="Jetpack:",c.l=function(e,t,i,o){if(n[e])n[e].push(t);else{var s,a;if(void 0!==i)for(var u=document.getElementsByTagName("script"),l=0;l<u.length;l++){var f=u[l];if(f.getAttribute("src")==e||f.getAttribute("data-webpack")==r+i){s=f;break}}s||(a=!0,(s=document.createElement("script")).charset="utf-8",s.timeout=120,c.nc&&s.setAttribute("nonce",c.nc),s.setAttribute("data-webpack",r+i),s.src=e),n[e]=[t];var d=function(t,r){s.onerror=s.onload=null,clearTimeout(h);var i=n[e];if(delete n[e],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((function(e){return e(r)})),t)return t(r)},h=setTimeout(d.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=d.bind(null,s.onerror),s.onload=d.bind(null,s.onload),a&&document.head.appendChild(s)}},c.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},function(){var e;c.g.importScripts&&(e=c.g.location+"");var t=c.g.document;if(!e&&t&&(t.currentScript&&(e=t.currentScript.src),!e)){var n=t.getElementsByTagName("script");n.length&&(e=n[n.length-1].src)}if(!e)throw new Error("Automatic publicPath is not supported in this browser");e=e.replace(/#.*$/,"").replace(/\?.*$/,"").replace(/\/[^\/]+$/,"/"),c.p=e+"../"}(),i=function(e){return new Promise((function(t,n){var r=c.miniCssF(e),i=c.p+r;if(function(e,t){for(var n=document.getElementsByTagName("link"),r=0;r<n.length;r++){var i=(s=n[r]).getAttribute("data-href")||s.getAttribute("href");if("stylesheet"===s.rel&&(i===e||i===t))return s}var o=document.getElementsByTagName("style");for(r=0;r<o.length;r++){var s;if((i=(s=o[r]).getAttribute("data-href"))===e||i===t)return s}}(r,i))return t();!function(e,t,n,r){var i=document.createElement("link");i.rel="stylesheet",i.type="text/css",i.onerror=i.onload=function(o){if(i.onerror=i.onload=null,"load"===o.type)n();else{var s=o&&("load"===o.type?"missing":o.type),a=o&&o.target&&o.target.href||t,c=new Error("Loading CSS chunk "+e+" failed.\n("+a+")");c.code="CSS_CHUNK_LOAD_FAILED",c.type=s,c.request=a,i.parentNode.removeChild(i),r(c)}},i.href=t,document.head.appendChild(i)}(e,i,t,n)}))},o={72:0},c.f.miniCss=function(e,t){o[e]?t.push(o[e]):0!==o[e]&&{390:1}[e]&&t.push(o[e]=i(e).then((function(){o[e]=0}),(function(t){throw delete o[e],t})))},function(){var e={72:0};c.f.j=function(t,n){var r=c.o(e,t)?e[t]:void 0;if(0!==r)if(r)n.push(r[2]);else if(390!=t){var i=new Promise((function(n,i){r=e[t]=[n,i]}));n.push(r[2]=i);var o=c.p+c.u(t),s=new Error;c.l(o,(function(n){if(c.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var i=n&&("load"===n.type?"missing":n.type),o=n&&n.target&&n.target.src;s.message="Loading chunk "+t+" failed.\n("+i+": "+o+")",s.name="ChunkLoadError",s.type=i,s.request=o,r[1](s)}}),"chunk-"+t,t)}else e[t]=0};var t=function(t,n){var r,i,o=n[0],s=n[1],a=n[2],u=0;if(o.some((function(t){return 0!==e[t]}))){for(r in s)c.o(s,r)&&(c.m[r]=s[r]);if(a)a(c)}for(t&&t(n);u<o.length;u++)i=o[u],c.o(e,i)&&e[i]&&e[i][0](),e[i]=0},n=self.webpackChunkJetpack=self.webpackChunkJetpack||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))}(),function(){"use strict";c(72195)}(),function(){"use strict";var e=c(92819),t=c(47701),n=c.n(t),r=c(35702),i=c(81178),o=c(20937);"undefined"!=typeof window&&n()((function(){const t=document.getElementsByClassName("wp-block-jetpack-slideshow");(0,e.forEach)(t,(e=>{if("true"===e.getAttribute("data-jetpack-block-initialized"))return;const{autoplay:t,delay:n,effect:s}=e.dataset,a=window.matchMedia("(prefers-reduced-motion: reduce)").matches,c=t&&!a,u=e.getElementsByClassName("swiper-container")[0];let l=null;(0,i.Z)(u,{autoplay:!!c&&{delay:1e3*n,disableOnInteraction:!1},effect:s,init:!0,initialSlide:0,loop:!0,keyboard:{enabled:!0,onlyInViewport:!0}},{init:o.UA,imagesReady:o.$m,paginationRender:o.Wj,transitionEnd:o.HV}).then((e=>{new r.Z((()=>{l&&(cancelAnimationFrame(l),l=null),l=requestAnimationFrame((()=>{(0,o.$m)(e),e.update()}))})).observe(e.el)})).catch((()=>{e.querySelector(".wp-block-jetpack-slideshow_container").classList.add("wp-swiper-initialized")})),e.setAttribute("data-jetpack-block-initialized","true")}))}))}()}();;
+!function(){var t={72195:function(t,r,e){"object"==typeof window&&window.Jetpack_Block_Assets_Base_Url&&window.Jetpack_Block_Assets_Base_Url.url&&(e.p=window.Jetpack_Block_Assets_Base_Url.url)}},r={};function e(n){var o=r[n];if(void 0!==o)return o.exports;var c=r[n]={exports:{}};return t[n](c,c.exports,e),c.exports}e.n=function(t){var r=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(r,{a:r}),r},e.d=function(t,r){for(var n in r)e.o(r,n)&&!e.o(t,n)&&Object.defineProperty(t,n,{enumerable:!0,get:r[n]})},e.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(t){if("object"==typeof window)return window}}(),e.o=function(t,r){return Object.prototype.hasOwnProperty.call(t,r)},function(){var t;e.g.importScripts&&(t=e.g.location+"");var r=e.g.document;if(!t&&r&&(r.currentScript&&(t=r.currentScript.src),!t)){var n=r.getElementsByTagName("script");n.length&&(t=n[n.length-1].src)}if(!t)throw new Error("Automatic publicPath is not supported in this browser");t=t.replace(/#.*$/,"").replace(/\?.*$/,"").replace(/\/[^\/]+$/,"/"),e.p=t+"../"}(),function(){"use strict";e(72195)}()}();;
+/* global wpcom, jetpackCarouselStrings, DocumentTouch */
+
+( function () {
+	'use strict';
+	var swiper;
+	/////////////////////////////////////
+	// Utility functions
+	/////////////////////////////////////
+	var util = ( function () {
+		var noop = function () {};
+
+		function texturize( text ) {
+			// Ensure we get a string.
+			text = text + '';
+			text = text.replace( /'/g, '&#8217;' ).replace( /&#039;/g, '&#8217;' );
+			text = text
+				.replace( /"/g, '&#8221;' )
+				.replace( /&#034;/g, '&#8221;' )
+				.replace( /&quot;/g, '&#8221;' )
+				.replace( /[\u201D]/g, '&#8221;' );
+			// Untexturize allowed HTML tags params double-quotes.
+			text = text.replace( /([\w]+)=&#[\d]+;(.+?)&#[\d]+;/g, '$1="$2"' );
+			return text.trim();
+		}
+
+		function applyReplacements( text, replacements ) {
+			if ( ! text ) {
+				return;
+			}
+			if ( ! replacements ) {
+				return text;
+			}
+			return text.replace( /{(\d+)}/g, function ( match, number ) {
+				return typeof replacements[ number ] !== 'undefined' ? replacements[ number ] : match;
+			} );
+		}
+
+		function getBackgroundImage( imgEl ) {
+			var canvas = document.createElement( 'canvas' ),
+				context = canvas.getContext && canvas.getContext( '2d' );
+
+			if ( ! imgEl ) {
+				return;
+			}
+
+			context.filter = 'blur(20px) ';
+			context.drawImage( imgEl, 0, 0 );
+			var url = canvas.toDataURL( 'image/png' );
+			canvas = null;
+
+			return url;
+		}
+
+		return {
+			noop: noop,
+			texturize: texturize,
+			applyReplacements: applyReplacements,
+			getBackgroundImage: getBackgroundImage,
+		};
+	} )();
+
+	/////////////////////////////////////
+	// DOM-related utility functions
+	/////////////////////////////////////
+	var domUtil = ( function () {
+		// Helper matches function (not a polyfill), compatible with IE 11.
+		function matches( el, sel ) {
+			if ( Element.prototype.matches ) {
+				return el.matches( sel );
+			}
+
+			if ( Element.prototype.msMatchesSelector ) {
+				return el.msMatchesSelector( sel );
+			}
+		}
+
+		// Helper closest parent node function (not a polyfill) based on
+		// https://developer.mozilla.org/en-US/docs/Web/API/Element/closest#Polyfill
+		function closest( el, sel ) {
+			if ( el.closest ) {
+				return el.closest( sel );
+			}
+
+			var current = el;
+
+			do {
+				if ( matches( current, sel ) ) {
+					return current;
+				}
+				current = current.parentElement || current.parentNode;
+			} while ( current !== null && current.nodeType === 1 );
+
+			return null;
+		}
+
+		function hide( el ) {
+			if ( el ) {
+				el.style.display = 'none';
+			}
+		}
+
+		function show( el ) {
+			if ( el ) {
+				// Everything we show and hide in Carousel is currently a block,
+				// so we can make this really straightforward.
+				el.style.display = 'block';
+			}
+		}
+
+		function fade( el, start, end, callback ) {
+			if ( ! el ) {
+				return callback();
+			}
+
+			// Prepare for transition.
+			// Ensure the item is in the render tree, in its initial state.
+			el.style.removeProperty( 'display' );
+			el.style.opacity = start;
+			el.style.transition = 'opacity 0.2s';
+			el.style.pointerEvents = 'none';
+
+			var finished = function ( e ) {
+				if ( e.target === el && e.propertyName === 'opacity' ) {
+					el.style.removeProperty( 'transition' );
+					el.style.removeProperty( 'opacity' );
+					el.style.removeProperty( 'pointer-events' );
+					el.removeEventListener( 'transitionend', finished );
+					el.removeEventListener( 'transitioncancel', finished );
+					callback();
+				}
+			};
+
+			requestAnimationFrame( function () {
+				// Double rAF for browser compatibility.
+				requestAnimationFrame( function () {
+					el.addEventListener( 'transitionend', finished );
+					el.addEventListener( 'transitioncancel', finished );
+					// Trigger transition.
+					el.style.opacity = end;
+				} );
+			} );
+		}
+
+		function fadeIn( el, callback ) {
+			callback = callback || util.noop;
+			fade( el, '0', '1', callback );
+		}
+
+		function fadeOut( el, callback ) {
+			callback = callback || util.noop;
+			fade( el, '1', '0', function () {
+				if ( el ) {
+					el.style.display = 'none';
+				}
+				callback();
+			} );
+		}
+
+		function emitEvent( el, type, detail ) {
+			var e;
+			try {
+				e = new CustomEvent( type, {
+					bubbles: true,
+					cancelable: true,
+					detail: detail || null,
+				} );
+			} catch ( err ) {
+				e = document.createEvent( 'CustomEvent' );
+				e.initCustomEvent( type, true, true, detail || null );
+			}
+			el.dispatchEvent( e );
+		}
+
+		// From: https://easings.net/#easeInOutQuad
+		function easeInOutQuad( num ) {
+			return num < 0.5 ? 2 * num * num : 1 - Math.pow( -2 * num + 2, 2 ) / 2;
+		}
+
+		function getFooterClearance( container ) {
+			var footer = container.querySelector( '.jp-carousel-info-footer' );
+			var infoArea = container.querySelector( '.jp-carousel-info-extra' );
+			var contentArea = container.querySelector( '.jp-carousel-info-content-wrapper' );
+
+			if ( footer && infoArea && contentArea ) {
+				var styles = window.getComputedStyle( infoArea );
+				var padding = parseInt( styles.paddingTop, 10 ) + parseInt( styles.paddingBottom, 10 );
+				padding = isNaN( padding ) ? 0 : padding;
+				return contentArea.offsetHeight + footer.offsetHeight + padding;
+			}
+			return 0;
+		}
+
+		function isTouch() {
+			return (
+				'ontouchstart' in window || ( window.DocumentTouch && document instanceof DocumentTouch )
+			);
+		}
+
+		function scrollToElement( el, container, callback ) {
+			if ( ! el || ! container ) {
+				if ( callback ) {
+					return callback();
+				}
+				return;
+			}
+
+			// For iOS Safari compatibility, use JS to set the minimum height.
+			var infoArea = container.querySelector( '.jp-carousel-info-extra' );
+			if ( infoArea ) {
+				// 64px is the same height as `.jp-carousel-info-footer` in the CSS.
+				infoArea.style.minHeight = window.innerHeight - 64 + 'px';
+			}
+
+			var isScrolling = true;
+			var startTime = Date.now();
+			var duration = 300;
+			var originalPosition = container.scrollTop;
+			var targetPosition = Math.max(
+				0,
+				el.offsetTop - Math.max( 0, window.innerHeight - getFooterClearance( container ) )
+			);
+			var distance = targetPosition - container.scrollTop;
+			distance = Math.min( distance, container.scrollHeight - window.innerHeight );
+
+			function stopScroll() {
+				isScrolling = false;
+			}
+
+			function runScroll() {
+				var now = Date.now();
+				var progress = easeInOutQuad( ( now - startTime ) / duration );
+
+				progress = progress > 1 ? 1 : progress;
+				var newVal = progress * distance;
+				container.scrollTop = originalPosition + newVal;
+
+				if ( now <= startTime + duration && isScrolling ) {
+					return requestAnimationFrame( runScroll );
+				}
+				if ( callback ) {
+					callback();
+				}
+				if ( infoArea ) {
+					infoArea.style.minHeight = '';
+				}
+				isScrolling = false;
+				container.removeEventListener( 'wheel', stopScroll );
+			}
+
+			// Allow scroll to be cancelled by user interaction.
+			container.addEventListener( 'wheel', stopScroll );
+			runScroll();
+		}
+
+		function getJSONAttribute( el, attr ) {
+			if ( ! el || ! el.hasAttribute( attr ) ) {
+				return undefined;
+			}
+
+			try {
+				return JSON.parse( el.getAttribute( attr ) );
+			} catch ( e ) {
+				return undefined;
+			}
+		}
+
+		function convertToPlainText( html ) {
+			var dummy = document.createElement( 'div' );
+			dummy.textContent = html;
+			return dummy.innerHTML;
+		}
+
+		function stripHTML( text ) {
+			return text.replace( /<[^>]*>?/gm, '' );
+		}
+
+		return {
+			closest: closest,
+			matches: matches,
+			hide: hide,
+			show: show,
+			fadeIn: fadeIn,
+			fadeOut: fadeOut,
+			scrollToElement: scrollToElement,
+			getJSONAttribute: getJSONAttribute,
+			convertToPlainText: convertToPlainText,
+			stripHTML: stripHTML,
+			emitEvent: emitEvent,
+			isTouch: isTouch,
+		};
+	} )();
+
+	/////////////////////////////////////
+	// Carousel implementation
+	/////////////////////////////////////
+	function init() {
+		var commentInterval;
+		var screenPadding;
+		var originalOverflow;
+		var originalHOverflow;
+		var scrollPos;
+
+		var lastKnownLocationHash = '';
+		var isUserTyping = false;
+
+		var gallerySelector =
+			'div.gallery, div.tiled-gallery, ul.wp-block-gallery, ul.blocks-gallery-grid, ' +
+			'figure.wp-block-gallery.has-nested-images, div.wp-block-jetpack-tiled-gallery, a.single-image-gallery';
+
+		// Selector for items within a gallery or tiled gallery.
+		var galleryItemSelector =
+			'.gallery-item, .tiled-gallery-item, .blocks-gallery-item, ' + ' .tiled-gallery__item';
+
+		// Selector for all items including single images.
+		var itemSelector = galleryItemSelector + ', .wp-block-image';
+
+		var carousel = {};
+
+		var stat =
+			typeof wpcom !== 'undefined' && wpcom.carousel && wpcom.carousel.stat
+				? wpcom.carousel.stat
+				: util.noop;
+
+		var pageview =
+			typeof wpcom !== 'undefined' && wpcom.carousel && wpcom.carousel.pageview
+				? wpcom.carousel.pageview
+				: util.noop;
+
+		function handleKeyboardEvent( e ) {
+			if ( ! isUserTyping ) {
+				switch ( e.which ) {
+					case 38: // up
+						e.preventDefault();
+						carousel.overlay.scrollTop -= 100;
+						break;
+					case 40: // down
+						e.preventDefault();
+						carousel.overlay.scrollTop += 100;
+						break;
+					case 39: // right
+						e.preventDefault();
+						swiper.slideNext();
+						break;
+					case 37: // left
+					case 8: // backspace
+						e.preventDefault();
+						swiper.slidePrev();
+						break;
+					case 27: // escape
+						e.preventDefault();
+						closeCarousel();
+						break;
+					default:
+						break;
+				}
+			}
+		}
+
+		function disableKeyboardNavigation() {
+			isUserTyping = true;
+		}
+
+		function enableKeyboardNavigation() {
+			isUserTyping = false;
+		}
+
+		function calculatePadding() {
+			var baseScreenPadding = 110;
+			screenPadding = baseScreenPadding;
+
+			if ( window.innerWidth <= 760 ) {
+				screenPadding = Math.round( ( window.innerWidth / 760 ) * baseScreenPadding );
+
+				if ( screenPadding < 40 && domUtil.isTouch() ) {
+					screenPadding = 0;
+				}
+			}
+		}
+
+		function initializeCarousel() {
+			if ( ! carousel.overlay ) {
+				carousel.overlay = document.querySelector( '.jp-carousel-overlay' );
+				carousel.container = carousel.overlay.querySelector( '.jp-carousel-wrap' );
+				carousel.gallery = carousel.container.querySelector( '.jp-carousel' );
+				carousel.info = carousel.overlay.querySelector( '.jp-carousel-info' );
+				carousel.caption = carousel.info.querySelector( '.jp-carousel-caption' );
+				carousel.commentField = carousel.overlay.querySelector(
+					'#jp-carousel-comment-form-comment-field'
+				);
+				carousel.emailField = carousel.overlay.querySelector(
+					'#jp-carousel-comment-form-email-field'
+				);
+				carousel.authorField = carousel.overlay.querySelector(
+					'#jp-carousel-comment-form-author-field'
+				);
+				carousel.urlField = carousel.overlay.querySelector( '#jp-carousel-comment-form-url-field' );
+
+				calculatePadding();
+
+				[
+					carousel.commentField,
+					carousel.emailField,
+					carousel.authorField,
+					carousel.urlField,
+				].forEach( function ( field ) {
+					if ( field ) {
+						field.addEventListener( 'focus', disableKeyboardNavigation );
+						field.addEventListener( 'blur', enableKeyboardNavigation );
+					}
+				} );
+
+				carousel.overlay.addEventListener( 'click', function ( e ) {
+					var target = e.target;
+					var isTargetCloseHint = !! domUtil.closest( target, '.jp-carousel-close-hint' );
+					var isSmallScreen = !! window.matchMedia( '(max-device-width: 760px)' ).matches;
+					if ( target === carousel.overlay ) {
+						if ( isSmallScreen ) {
+							return;
+						} else {
+							closeCarousel();
+						}
+					} else if ( isTargetCloseHint ) {
+						closeCarousel();
+					} else if ( target.classList.contains( 'jp-carousel-image-download' ) ) {
+						stat( 'download_original_click' );
+					} else if ( target.classList.contains( 'jp-carousel-comment-login' ) ) {
+						handleCommentLoginClick( e );
+					} else if ( domUtil.closest( target, '#jp-carousel-comment-form-container' ) ) {
+						handleCommentFormClick( e );
+					} else if (
+						domUtil.closest( target, '.jp-carousel-photo-icons-container' ) ||
+						target.classList.contains( 'jp-carousel-photo-title' )
+					) {
+						handleFooterElementClick( e );
+					} else if ( ! domUtil.closest( target, '.jp-carousel-info' ) ) {
+						return;
+					}
+				} );
+
+				window.addEventListener( 'keydown', handleKeyboardEvent );
+
+				carousel.overlay.addEventListener( 'jp_carousel.afterOpen', function () {
+					enableKeyboardNavigation();
+
+					// Don't show navigation if there's only one image.
+					if ( carousel.slides.length <= 1 ) {
+						return;
+					}
+					// Show dot pagination if slide count is <= 5, otherwise show n/total.
+					if ( carousel.slides.length <= 5 ) {
+						domUtil.show( carousel.info.querySelector( '.jp-swiper-pagination' ) );
+					} else {
+						domUtil.show( carousel.info.querySelector( '.jp-carousel-pagination' ) );
+					}
+				} );
+
+				carousel.overlay.addEventListener( 'jp_carousel.beforeClose', function () {
+					disableKeyboardNavigation();
+
+					// Fixes some themes where closing carousel brings view back to top.
+					document.documentElement.style.removeProperty( 'height' );
+
+					// If we disable the swiper (because there's only one image)
+					// we have to re-enable it here again as Swiper doesn't, for some reason,
+					// show the navigation buttons again after reinitialization.
+					if ( swiper ) {
+						swiper.enable();
+					}
+
+					// Hide pagination.
+					domUtil.hide( carousel.info.querySelector( '.jp-swiper-pagination' ) );
+					domUtil.hide( carousel.info.querySelector( '.jp-carousel-pagination' ) );
+				} );
+
+				carousel.overlay.addEventListener( 'jp_carousel.afterClose', function () {
+					// don't force the browser back when the carousel closes.
+					if ( window.history.pushState ) {
+						history.pushState(
+							'',
+							document.title,
+							window.location.pathname + window.location.search
+						);
+					} else {
+						window.location.href = '';
+					}
+					lastKnownLocationHash = '';
+					carousel.isOpen = false;
+				} );
+
+				// Prevent native browser zooming
+				carousel.overlay.addEventListener( 'touchstart', function ( e ) {
+					if ( e.touches.length > 1 ) {
+						e.preventDefault();
+					}
+				} );
+			}
+		}
+
+		function handleCommentLoginClick() {
+			var slide = carousel.currentSlide;
+			var attachmentId = slide ? slide.attrs.attachmentId : '0';
+
+			window.location.href = jetpackCarouselStrings.login_url + '%23jp-carousel-' + attachmentId;
+		}
+
+		function updatePostResults( msg, isSuccess ) {
+			var results = carousel.overlay.querySelector( '#jp-carousel-comment-post-results' );
+			var elClass = 'jp-carousel-comment-post-' + ( isSuccess ? 'success' : 'error' );
+			results.innerHTML = '<span class="' + elClass + '">' + msg + '</span>';
+			domUtil.hide( carousel.overlay.querySelector( '#jp-carousel-comment-form-spinner' ) );
+			carousel.overlay
+				.querySelector( '#jp-carousel-comment-form' )
+				.classList.remove( 'jp-carousel-is-disabled' );
+			domUtil.show( results );
+		}
+
+		function handleCommentFormClick( e ) {
+			var target = e.target;
+			var data = domUtil.getJSONAttribute( carousel.container, 'data-carousel-extra' ) || {};
+			var attachmentId = carousel.currentSlide.attrs.attachmentId;
+
+			var wrapper = document.querySelector( '#jp-carousel-comment-form-submit-and-info-wrapper' );
+			var spinner = document.querySelector( '#jp-carousel-comment-form-spinner' );
+			var submit = document.querySelector( '#jp-carousel-comment-form-button-submit' );
+			var form = document.querySelector( '#jp-carousel-comment-form' );
+
+			if (
+				carousel.commentField &&
+				carousel.commentField.getAttribute( 'id' ) === target.getAttribute( 'id' )
+			) {
+				// For first page load
+				disableKeyboardNavigation();
+				domUtil.show( wrapper );
+			} else if ( domUtil.matches( target, 'input[type="submit"]' ) ) {
+				e.preventDefault();
+				e.stopPropagation();
+
+				domUtil.show( spinner );
+				form.classList.add( 'jp-carousel-is-disabled' );
+
+				var ajaxData = {
+					action: 'post_attachment_comment',
+					nonce: jetpackCarouselStrings.nonce,
+					blog_id: data.blog_id,
+					id: attachmentId,
+					comment: carousel.commentField.value,
+				};
+
+				if ( ! ajaxData.comment.length ) {
+					updatePostResults( jetpackCarouselStrings.no_comment_text, false );
+					return;
+				}
+
+				if ( Number( jetpackCarouselStrings.is_logged_in ) !== 1 ) {
+					ajaxData.email = carousel.emailField.value;
+					ajaxData.author = carousel.authorField.value;
+					ajaxData.url = carousel.urlField.value;
+
+					if ( Number( jetpackCarouselStrings.require_name_email ) === 1 ) {
+						if ( ! ajaxData.email.length || ! ajaxData.email.match( '@' ) ) {
+							updatePostResults( jetpackCarouselStrings.no_comment_email, false );
+							return;
+						} else if ( ! ajaxData.author.length ) {
+							updatePostResults( jetpackCarouselStrings.no_comment_author, false );
+							return;
+						}
+					}
+				}
+
+				var xhr = new XMLHttpRequest();
+				xhr.open( 'POST', jetpackCarouselStrings.ajaxurl, true );
+				xhr.setRequestHeader( 'X-Requested-With', 'XMLHttpRequest' );
+				xhr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8' );
+
+				xhr.onreadystatechange = function () {
+					if (
+						this.readyState === XMLHttpRequest.DONE &&
+						this.status >= 200 &&
+						this.status < 300
+					) {
+						var response;
+						try {
+							response = JSON.parse( this.response );
+						} catch ( error ) {
+							updatePostResults( jetpackCarouselStrings.comment_post_error, false );
+							return;
+						}
+						if ( response.comment_status === 'approved' ) {
+							updatePostResults( jetpackCarouselStrings.comment_approved, true );
+						} else if ( response.comment_status === 'unapproved' ) {
+							updatePostResults( jetpackCarouselStrings.comment_unapproved, true );
+						} else {
+							// 'deleted', 'spam', false
+							updatePostResults( jetpackCarouselStrings.comment_post_error, false );
+						}
+						clearCommentTextAreaValue();
+						fetchComments( attachmentId );
+						submit.value = jetpackCarouselStrings.post_comment;
+						domUtil.hide( spinner );
+						form.classList.remove( 'jp-carousel-is-disabled' );
+					} else {
+						// TODO: Add error handling and display here
+						updatePostResults( jetpackCarouselStrings.comment_post_error, false );
+					}
+				};
+
+				var params = [];
+				for ( var item in ajaxData ) {
+					if ( item ) {
+						// Encode each form element into a URI-compatible string.
+						var encoded = encodeURIComponent( item ) + '=' + encodeURIComponent( ajaxData[ item ] );
+						// In x-www-form-urlencoded, spaces should be `+`, not `%20`.
+						params.push( encoded.replace( /%20/g, '+' ) );
+					}
+				}
+				var encodedData = params.join( '&' );
+
+				xhr.send( encodedData );
+			}
+		}
+
+		/**
+		 * Handles clicks to icons and other action elements in the icon container.
+		 * @param {MouseEvent|TouchEvent|KeyBoardEvent} Event object.
+		 */
+		function handleFooterElementClick( e ) {
+			e.preventDefault();
+
+			var target = e.target;
+			var extraInfoContainer = carousel.info.querySelector( '.jp-carousel-info-extra' );
+			var photoMetaContainer = carousel.info.querySelector( '.jp-carousel-image-meta' );
+			var commentsContainer = carousel.info.querySelector( '.jp-carousel-comments-wrapper' );
+			var infoIcon = carousel.info.querySelector( '.jp-carousel-icon-info' );
+			var commentsIcon = carousel.info.querySelector( '.jp-carousel-icon-comments' );
+
+			function handleInfoToggle() {
+				if ( commentsIcon ) {
+					commentsIcon.classList.remove( 'jp-carousel-selected' );
+				}
+				infoIcon.classList.toggle( 'jp-carousel-selected' );
+
+				if ( commentsContainer ) {
+					commentsContainer.classList.remove( 'jp-carousel-show' );
+				}
+				if ( photoMetaContainer ) {
+					photoMetaContainer.classList.toggle( 'jp-carousel-show' );
+					if ( photoMetaContainer.classList.contains( 'jp-carousel-show' ) ) {
+						extraInfoContainer.classList.add( 'jp-carousel-show' );
+					} else {
+						extraInfoContainer.classList.remove( 'jp-carousel-show' );
+					}
+				}
+			}
+
+			function handleCommentToggle() {
+				if ( infoIcon ) {
+					infoIcon.classList.remove( 'jp-carousel-selected' );
+				}
+				commentsIcon.classList.toggle( 'jp-carousel-selected' );
+
+				if ( photoMetaContainer ) {
+					photoMetaContainer.classList.remove( 'jp-carousel-show' );
+				}
+				if ( commentsContainer ) {
+					commentsContainer.classList.toggle( 'jp-carousel-show' );
+					if ( commentsContainer.classList.contains( 'jp-carousel-show' ) ) {
+						extraInfoContainer.classList.add( 'jp-carousel-show' );
+					} else {
+						extraInfoContainer.classList.remove( 'jp-carousel-show' );
+					}
+				}
+			}
+
+			if (
+				domUtil.closest( target, '.jp-carousel-icon-info' ) ||
+				target.classList.contains( 'jp-carousel-photo-title' )
+			) {
+				if ( photoMetaContainer && photoMetaContainer.classList.contains( 'jp-carousel-show' ) ) {
+					domUtil.scrollToElement( carousel.overlay, carousel.overlay, handleInfoToggle );
+				} else {
+					handleInfoToggle();
+					domUtil.scrollToElement( carousel.info, carousel.overlay );
+				}
+			}
+
+			if ( domUtil.closest( target, '.jp-carousel-icon-comments' ) ) {
+				if ( commentsContainer && commentsContainer.classList.contains( 'jp-carousel-show' ) ) {
+					domUtil.scrollToElement( carousel.overlay, carousel.overlay, handleCommentToggle );
+				} else {
+					handleCommentToggle();
+					domUtil.scrollToElement( carousel.info, carousel.overlay );
+				}
+			}
+		}
+
+		function processSingleImageGallery() {
+			var images = document.querySelectorAll( 'a img[data-attachment-id]' );
+			Array.prototype.forEach.call( images, function ( image ) {
+				var link = image.parentElement;
+				var container = link.parentElement;
+
+				// Skip if image was already added to gallery by shortcode.
+				if ( container.classList.contains( 'gallery-icon' ) ) {
+					return;
+				}
+
+				// Skip if image is part of a gallery.
+				if ( domUtil.closest( container, galleryItemSelector ) ) {
+					return;
+				}
+
+				// Skip if the parent is not actually a link.
+				if ( ! link.hasAttribute( 'href' ) ) {
+					return;
+				}
+
+				var valid = false;
+
+				// If link points to 'Media File' (ignoring GET parameters) and flag is set, allow it.
+				if (
+					link.getAttribute( 'href' ).split( '?' )[ 0 ] ===
+						image.getAttribute( 'data-orig-file' ).split( '?' )[ 0 ] &&
+					Number( jetpackCarouselStrings.single_image_gallery_media_file ) === 1
+				) {
+					valid = true;
+				}
+
+				// If link points to 'Attachment Page', allow it.
+				if ( link.getAttribute( 'href' ) === image.getAttribute( 'data-permalink' ) ) {
+					valid = true;
+				}
+
+				// Links to 'Custom URL' or 'Media File' when flag is not set are not valid.
+				if ( ! valid ) {
+					return;
+				}
+
+				// Make this node a gallery recognizable by event listener above.
+				link.classList.add( 'single-image-gallery' );
+				// blog_id is needed to allow posting comments to correct blog.
+				link.setAttribute(
+					'data-carousel-extra',
+					JSON.stringify( {
+						blog_id: Number( jetpackCarouselStrings.blog_id ),
+					} )
+				);
+			} );
+		}
+
+		function testForData( el ) {
+			return !! ( el && el.getAttribute( 'data-carousel-extra' ) );
+		}
+
+		function openOrSelectSlide( gal, index ) {
+			if ( ! carousel.isOpen ) {
+				// The `open` method selects the correct slide during the initialization.
+				loadSwiper( gal, { startIndex: index } );
+			} else {
+				selectSlideAtIndex( index );
+				// We have to force swiper to slide to the index onHasChange.
+				swiper.slideTo( index + 1 );
+			}
+		}
+
+		function selectSlideAtIndex( index ) {
+			if ( ! index || index < 0 || index > carousel.slides.length ) {
+				index = 0;
+			}
+			carousel.currentSlide = carousel.slides[ index ];
+
+			var current = carousel.currentSlide;
+			var attachmentId = current.attrs.attachmentId;
+			var infoIcon = carousel.info.querySelector( '.jp-carousel-icon-info' );
+			var commentsIcon = carousel.info.querySelector( '.jp-carousel-icon-comments' );
+
+			// If the comment/info section is toggled open, it's kept open, but scroll to top of the next slide.
+			if (
+				( infoIcon && infoIcon.classList.contains( 'jp-carousel-selected' ) ) ||
+				( commentsIcon && commentsIcon.classList.contains( 'jp-carousel-selected' ) )
+			) {
+				if ( carousel.overlay.scrollTop !== 0 ) {
+					domUtil.scrollToElement( carousel.overlay, carousel.overlay );
+				}
+			}
+
+			loadFullImage( carousel.slides[ index ] );
+
+			if (
+				Number( jetpackCarouselStrings.display_background_image ) === 1 &&
+				! carousel.slides[ index ].backgroundImage
+			) {
+				loadBackgroundImage( carousel.slides[ index ] );
+			}
+
+			domUtil.hide( carousel.caption );
+			updateTitleCaptionAndDesc( {
+				caption: current.attrs.caption,
+				title: current.attrs.title,
+				desc: current.attrs.desc,
+			} );
+
+			var imageMeta = carousel.slides[ index ].attrs.imageMeta;
+			updateExif( imageMeta );
+			updateFullSizeLink( current );
+
+			if ( Number( jetpackCarouselStrings.display_comments ) === 1 ) {
+				testCommentsOpened( carousel.slides[ index ].attrs.commentsOpened );
+				fetchComments( attachmentId );
+				domUtil.hide( carousel.info.querySelector( '#jp-carousel-comment-post-results' ) );
+			}
+
+			// Update pagination in footer.
+			var pagination = carousel.info.querySelector( '.jp-carousel-pagination' );
+			if ( pagination && carousel.slides.length > 5 ) {
+				var currentPage = index + 1;
+				pagination.innerHTML = '<span>' + currentPage + ' / ' + carousel.slides.length + '</span>';
+			}
+
+			// Record pageview in WP Stats, for each new image loaded full-screen.
+			if ( jetpackCarouselStrings.stats ) {
+				new Image().src =
+					document.location.protocol +
+					'//pixel.wp.com/g.gif?' +
+					jetpackCarouselStrings.stats +
+					'&post=' +
+					encodeURIComponent( attachmentId ) +
+					'&rand=' +
+					Math.random();
+			}
+
+			pageview( attachmentId );
+
+			window.location.hash = lastKnownLocationHash = '#jp-carousel-' + attachmentId;
+		}
+
+		function restoreScroll() {
+			window.scrollTo( window.scrollX || window.pageXOffset || 0, scrollPos || 0 );
+		}
+
+		function closeCarousel() {
+			// Make sure to let the page scroll again.
+			document.body.style.overflow = originalOverflow;
+			document.documentElement.style.overflow = originalHOverflow;
+			clearCommentTextAreaValue();
+
+			disableKeyboardNavigation();
+
+			domUtil.emitEvent( carousel.overlay, 'jp_carousel.beforeClose' );
+			restoreScroll();
+			swiper.destroy();
+			carousel.isOpen = false;
+			// Clear slide data for DOM garbage collection.
+			carousel.slides = [];
+			carousel.currentSlide = undefined;
+			carousel.gallery.innerHTML = '';
+
+			domUtil.fadeOut( carousel.overlay, function () {
+				domUtil.emitEvent( carousel.overlay, 'jp_carousel.afterClose' );
+			} );
+		}
+
+		function calculateMaxSlideDimensions() {
+			return {
+				width: window.innerWidth,
+				height: window.innerHeight - 64, //subtract height of bottom info bar,
+			};
+		}
+
+		function selectBestImageUrl( args ) {
+			if ( typeof args !== 'object' ) {
+				args = {};
+			}
+
+			if ( typeof args.origFile === 'undefined' ) {
+				return '';
+			}
+
+			if ( typeof args.origWidth === 'undefined' || typeof args.maxWidth === 'undefined' ) {
+				return args.origFile;
+			}
+
+			if ( typeof args.mediumFile === 'undefined' || typeof args.largeFile === 'undefined' ) {
+				return args.origFile;
+			}
+
+			// Check if the image is being served by Photon (using a regular expression on the hostname).
+
+			var imageLinkParser = document.createElement( 'a' );
+			imageLinkParser.href = args.largeFile;
+
+			var isPhotonUrl = /^i[0-2]\.wp\.com$/i.test( imageLinkParser.hostname );
+
+			var mediumSizeParts = getImageSizeParts( args.mediumFile, args.origWidth, isPhotonUrl );
+			var largeSizeParts = getImageSizeParts( args.largeFile, args.origWidth, isPhotonUrl );
+
+			var largeWidth = parseInt( largeSizeParts[ 0 ], 10 );
+			var largeHeight = parseInt( largeSizeParts[ 1 ], 10 );
+			var mediumWidth = parseInt( mediumSizeParts[ 0 ], 10 );
+			var mediumHeight = parseInt( mediumSizeParts[ 1 ], 10 );
+
+			args.origMaxWidth = args.maxWidth;
+			args.origMaxHeight = args.maxHeight;
+
+			// Give devices with a higher devicePixelRatio higher-res images (Retina display = 2, Android phones = 1.5, etc)
+			if ( typeof window.devicePixelRatio !== 'undefined' && window.devicePixelRatio > 1 ) {
+				args.maxWidth = args.maxWidth * window.devicePixelRatio;
+				args.maxHeight = args.maxHeight * window.devicePixelRatio;
+			}
+
+			if ( largeWidth >= args.maxWidth || largeHeight >= args.maxHeight ) {
+				return args.largeFile;
+			}
+
+			if ( mediumWidth >= args.maxWidth || mediumHeight >= args.maxHeight ) {
+				return args.mediumFile;
+			}
+
+			if ( isPhotonUrl ) {
+				// args.origFile doesn't point to a Photon url, so in this case we use args.largeFile
+				// to return the photon url of the original image.
+				var largeFileIndex = args.largeFile.lastIndexOf( '?' );
+				var origPhotonUrl = args.largeFile;
+				if ( largeFileIndex !== -1 ) {
+					origPhotonUrl = args.largeFile.substring( 0, largeFileIndex );
+					// If we have a really large image load a smaller version
+					// that is closer to the viewable size
+					if ( args.origWidth > args.maxWidth || args.origHeight > args.maxHeight ) {
+						// @2x the max sizes so we get a high enough resolution for zooming.
+						args.origMaxWidth = args.maxWidth * 2;
+						args.origMaxHeight = args.maxHeight * 2;
+						origPhotonUrl += '?fit=' + args.origMaxWidth + '%2C' + args.origMaxHeight;
+					}
+				}
+				return origPhotonUrl;
+			}
+
+			return args.origFile;
+		}
+
+		function getImageSizeParts( file, origWidth, isPhotonUrl ) {
+			var size = isPhotonUrl
+				? file.replace( /.*=([\d]+%2C[\d]+).*$/, '$1' )
+				: file.replace( /.*-([\d]+x[\d]+)\..+$/, '$1' );
+
+			var sizeParts =
+				size !== file
+					? isPhotonUrl
+						? size.split( '%2C' )
+						: size.split( 'x' )
+					: [ origWidth, 0 ];
+
+			// If one of the dimensions is set to 9999, then the actual value of that dimension can't be retrieved from the url.
+			// In that case, we set the value to 0.
+			if ( sizeParts[ 0 ] === '9999' ) {
+				sizeParts[ 0 ] = '0';
+			}
+
+			if ( sizeParts[ 1 ] === '9999' ) {
+				sizeParts[ 1 ] = '0';
+			}
+
+			return sizeParts;
+		}
+
+		/**
+		 * Returns a number in a fraction format that represents the shutter speed.
+		 * @param Number speed
+		 * @return String
+		 */
+		function formatShutterSpeed( speed ) {
+			var denominator;
+
+			// round to one decimal if value > 1s by multiplying it by 10, rounding, then dividing by 10 again
+			if ( speed >= 1 ) {
+				return Math.round( speed * 10 ) / 10 + 's';
+			}
+
+			// If the speed is less than one, we find the denominator by inverting
+			// the number. Since cameras usually use rational numbers as shutter
+			// speeds, we should get a nice round number. Or close to one in cases
+			// like 1/30. So we round it.
+			denominator = Math.round( 1 / speed );
+
+			return '1/' + denominator + 's';
+		}
+
+		function parseTitleOrDesc( value ) {
+			if ( ! value.match( ' ' ) && value.match( '_' ) ) {
+				return '';
+			}
+
+			return value;
+		}
+
+		function updateTitleCaptionAndDesc( data ) {
+			var caption = '';
+			var title = '';
+			var desc = '';
+			var captionMainElement;
+			var captionInfoExtraElement;
+			var titleElement;
+			var descriptionElement;
+
+			captionMainElement = carousel.overlay.querySelector( '.jp-carousel-photo-caption' );
+			captionInfoExtraElement = carousel.overlay.querySelector( '.jp-carousel-caption' );
+
+			titleElement = carousel.overlay.querySelector( '.jp-carousel-photo-title' );
+			descriptionElement = carousel.overlay.querySelector( '.jp-carousel-photo-description' );
+
+			domUtil.hide( captionMainElement );
+			domUtil.hide( captionInfoExtraElement );
+			domUtil.hide( titleElement );
+			domUtil.hide( descriptionElement );
+
+			caption = parseTitleOrDesc( data.caption ) || '';
+			title = parseTitleOrDesc( data.title ) || '';
+			desc = parseTitleOrDesc( data.desc ) || '';
+
+			if ( caption || title || desc ) {
+				if ( caption ) {
+					captionMainElement.innerHTML = caption;
+					captionInfoExtraElement.innerHTML = caption;
+
+					domUtil.show( captionMainElement );
+					domUtil.show( captionInfoExtraElement );
+				}
+
+				if ( domUtil.stripHTML( caption ) === domUtil.stripHTML( title ) ) {
+					title = '';
+				}
+
+				if ( domUtil.stripHTML( caption ) === domUtil.stripHTML( desc ) ) {
+					desc = '';
+				}
+
+				if ( domUtil.stripHTML( title ) === domUtil.stripHTML( desc ) ) {
+					desc = '';
+				}
+
+				if ( desc ) {
+					descriptionElement.innerHTML = desc;
+					domUtil.show( descriptionElement );
+
+					if ( ! title && ! caption ) {
+						captionMainElement.innerHTML = domUtil.stripHTML( desc );
+						domUtil.show( captionMainElement );
+					}
+				}
+
+				if ( title ) {
+					var plainTitle = domUtil.stripHTML( title );
+					titleElement.innerHTML = plainTitle;
+
+					if ( ! caption ) {
+						captionMainElement.innerHTML = plainTitle;
+						captionInfoExtraElement.innerHTML = plainTitle;
+
+						domUtil.show( captionMainElement );
+					}
+
+					domUtil.show( titleElement );
+				}
+			}
+		}
+
+		// updateExif updates the contents of the exif UL (.jp-carousel-image-exif)
+		function updateExif( meta ) {
+			if ( ! meta || Number( jetpackCarouselStrings.display_exif ) !== 1 ) {
+				return false;
+			}
+
+			var ul = carousel.info.querySelector( '.jp-carousel-image-meta ul.jp-carousel-image-exif' );
+			var html = '';
+
+			for ( var key in meta ) {
+				var val = meta[ key ];
+				var metaKeys = jetpackCarouselStrings.meta_data || [];
+
+				if ( parseFloat( val ) === 0 || ! val.length || metaKeys.indexOf( key ) === -1 ) {
+					continue;
+				}
+
+				switch ( key ) {
+					case 'focal_length':
+						val = val + 'mm';
+						break;
+					case 'shutter_speed':
+						val = formatShutterSpeed( val );
+						break;
+					case 'aperture':
+						val = 'f/' + val;
+						break;
+				}
+
+				html += '<li><h5>' + jetpackCarouselStrings[ key ] + '</h5>' + val + '</li>';
+			}
+
+			ul.innerHTML = html;
+			ul.style.removeProperty( 'display' );
+		}
+
+		// Update the contents of the jp-carousel-image-download link
+		function updateFullSizeLink( currentSlide ) {
+			if ( ! currentSlide ) {
+				return false;
+			}
+			var original;
+			var origSize = [ currentSlide.attrs.origWidth, currentSlide.attrs.origHeight ];
+			var imageLinkParser = document.createElement( 'a' );
+
+			imageLinkParser.href = currentSlide.attrs.src.replace( /\?.+$/, '' );
+
+			// Is this a Photon URL?
+			if ( imageLinkParser.hostname.match( /^i[\d]{1}\.wp\.com$/i ) !== null ) {
+				original = imageLinkParser.href;
+			} else {
+				original = currentSlide.attrs.origFile.replace( /\?.+$/, '' );
+			}
+
+			var downloadText = carousel.info.querySelector( '.jp-carousel-download-text' );
+			var permalink = carousel.info.querySelector( '.jp-carousel-image-download' );
+
+			downloadText.innerHTML = util.applyReplacements(
+				jetpackCarouselStrings.download_original,
+				origSize
+			);
+			permalink.setAttribute( 'href', original );
+			permalink.style.removeProperty( 'display' );
+		}
+
+		function testCommentsOpened( opened ) {
+			var commentForm = carousel.container.querySelector( '.jp-carousel-comment-form-container' );
+			var isOpened = parseInt( opened, 10 ) === 1;
+
+			if ( isOpened ) {
+				domUtil.fadeIn( commentForm );
+			} else {
+				domUtil.fadeOut( commentForm );
+			}
+		}
+
+		function fetchComments( attachmentId, offset ) {
+			var shouldClear = offset === undefined;
+			var commentsIndicator = carousel.info.querySelector(
+				'.jp-carousel-icon-comments .jp-carousel-has-comments-indicator'
+			);
+
+			commentsIndicator.classList.remove( 'jp-carousel-show' );
+
+			clearInterval( commentInterval );
+
+			if ( ! attachmentId ) {
+				return;
+			}
+
+			if ( ! offset || offset < 1 ) {
+				offset = 0;
+			}
+
+			var comments = carousel.info.querySelector( '.jp-carousel-comments' );
+			var commentsLoading = carousel.info.querySelector( '#jp-carousel-comments-loading' );
+			domUtil.show( commentsLoading );
+
+			if ( shouldClear ) {
+				domUtil.hide( comments );
+				comments.innerHTML = '';
+			}
+
+			var xhr = new XMLHttpRequest();
+			var url =
+				jetpackCarouselStrings.ajaxurl +
+				'?action=get_attachment_comments' +
+				'&nonce=' +
+				jetpackCarouselStrings.nonce +
+				'&id=' +
+				attachmentId +
+				'&offset=' +
+				offset;
+			xhr.open( 'GET', url );
+			xhr.setRequestHeader( 'X-Requested-With', 'XMLHttpRequest' );
+
+			var onError = function () {
+				domUtil.fadeIn( comments );
+				domUtil.fadeOut( commentsLoading );
+			};
+
+			xhr.onload = function () {
+				// Ignore the results if they arrive late and we're now on a different slide.
+				if (
+					! carousel.currentSlide ||
+					carousel.currentSlide.attrs.attachmentId !== attachmentId
+				) {
+					return;
+				}
+
+				var isSuccess = xhr.status >= 200 && xhr.status < 300;
+				var data;
+				try {
+					data = JSON.parse( xhr.responseText );
+				} catch ( e ) {
+					// Do nothing.
+				}
+
+				if ( ! isSuccess || ! data || ! Array.isArray( data ) ) {
+					return onError();
+				}
+
+				if ( shouldClear ) {
+					comments.innerHTML = '';
+				}
+
+				for ( var i = 0; i < data.length; i++ ) {
+					var entry = data[ i ];
+					var comment = document.createElement( 'div' );
+					comment.classList.add( 'jp-carousel-comment' );
+					comment.setAttribute( 'id', 'jp-carousel-comment-' + entry.id );
+					comment.innerHTML =
+						'<div class="comment-gravatar">' +
+						entry.gravatar_markup +
+						'</div>' +
+						'<div class="comment-content">' +
+						'<div class="comment-author">' +
+						entry.author_markup +
+						'</div>' +
+						'<div class="comment-date">' +
+						entry.date_gmt +
+						'</div>' +
+						entry.content +
+						'</div>';
+					comments.appendChild( comment );
+
+					// Set the interval to check for a new page of comments.
+					clearInterval( commentInterval );
+					commentInterval = setInterval( function () {
+						if ( carousel.container.scrollTop + 150 > window.innerHeight ) {
+							fetchComments( attachmentId, offset + 10 );
+							clearInterval( commentInterval );
+						}
+					}, 300 );
+				}
+
+				if ( data.length > 0 ) {
+					domUtil.show( comments );
+					commentsIndicator.innerText = data.length;
+					commentsIndicator.classList.add( 'jp-carousel-show' );
+				}
+
+				domUtil.hide( commentsLoading );
+			};
+
+			xhr.onerror = onError;
+
+			xhr.send();
+		}
+
+		function loadFullImage( slide ) {
+			var el = slide.el;
+			var attrs = slide.attrs;
+			var image = el.querySelector( 'img' );
+
+			if ( ! image.hasAttribute( 'data-loaded' ) ) {
+				var hasPreview = !! attrs.previewImage;
+				var thumbSize = attrs.thumbSize;
+
+				if ( ! hasPreview || ( thumbSize && el.offsetWidth > thumbSize.width ) ) {
+					image.src = attrs.src;
+				} else {
+					image.src = attrs.previewImage;
+				}
+
+				image.setAttribute( 'itemprop', 'image' );
+				image.setAttribute( 'data-loaded', 1 );
+			}
+		}
+
+		function loadBackgroundImage( slide ) {
+			var currentSlide = slide.el;
+
+			if ( swiper && swiper.slides ) {
+				currentSlide = swiper.slides[ swiper.activeIndex ];
+			}
+
+			var image = slide.attrs.originalElement;
+			var isLoaded = image.complete && image.naturalHeight !== 0;
+
+			if ( isLoaded ) {
+				applyBackgroundImage( slide, currentSlide, image );
+				return;
+			}
+
+			image.onload = function () {
+				applyBackgroundImage( slide, currentSlide, image );
+			};
+		}
+
+		function applyBackgroundImage( slide, currentSlide, image ) {
+			var url = util.getBackgroundImage( image );
+			slide.backgroundImage = url;
+			currentSlide.style.backgroundImage = 'url(' + url + ')';
+			currentSlide.style.backgroundSize = 'cover';
+		}
+
+		function clearCommentTextAreaValue() {
+			if ( carousel.commentField ) {
+				carousel.commentField.value = '';
+			}
+		}
+
+		function getOriginalDimensions( el ) {
+			var size = el.getAttribute( 'data-orig-size' ) || '';
+
+			if ( size ) {
+				var parts = size.split( ',' );
+				return { width: parseInt( parts[ 0 ], 10 ), height: parseInt( parts[ 1 ], 10 ) };
+			} else {
+				return {
+					width:
+						el.getAttribute( 'data-original-width' ) || el.getAttribute( 'width' ) || undefined,
+					height:
+						el.getAttribute( 'data-original-height' ) || el.getAttribute( 'height' ) || undefined,
+				};
+			}
+		}
+
+		function initCarouselSlides( items, startIndex ) {
+			carousel.slides = [];
+
+			var max = calculateMaxSlideDimensions();
+
+			// If the startIndex is not 0 then preload the clicked image first.
+			if ( startIndex !== 0 ) {
+				var img = new Image();
+				img.src = items[ startIndex ].getAttribute( 'data-gallery-src' );
+			}
+
+			var useInPageThumbnails = !! domUtil.closest( items[ 0 ], '.tiled-gallery.type-rectangular' );
+
+			// create the 'slide'
+			Array.prototype.forEach.call( items, function ( item, i ) {
+				var permalinkEl = domUtil.closest( item, 'a' );
+				var origFile = item.getAttribute( 'data-orig-file' ) || item.getAttribute( 'src-orig' );
+				var attrID =
+					item.getAttribute( 'data-attachment-id' ) || item.getAttribute( 'data-id' ) || '0';
+				var caption = document.querySelector(
+					'img[data-attachment-id="' + attrID + '"] + figcaption'
+				);
+
+				if ( caption ) {
+					caption = caption.innerHTML;
+				} else {
+					caption = item.getAttribute( 'data-image-caption' );
+				}
+
+				var attrs = {
+					originalElement: item,
+					attachmentId: attrID,
+					commentsOpened: item.getAttribute( 'data-comments-opened' ) || '0',
+					imageMeta: domUtil.getJSONAttribute( item, 'data-image-meta' ) || {},
+					title: item.getAttribute( 'data-image-title' ) || '',
+					desc: item.getAttribute( 'data-image-description' ) || '',
+					mediumFile: item.getAttribute( 'data-medium-file' ) || '',
+					largeFile: item.getAttribute( 'data-large-file' ) || '',
+					origFile: origFile || '',
+					thumbSize: { width: item.naturalWidth, height: item.naturalHeight },
+					caption: caption || '',
+					permalink: permalinkEl && permalinkEl.getAttribute( 'href' ),
+					src: origFile || item.getAttribute( 'src' ) || '',
+				};
+
+				var tiledGalleryItem = domUtil.closest( item, '.tiled-gallery-item' );
+				var tiledCaptionEl =
+					tiledGalleryItem && tiledGalleryItem.querySelector( '.tiled-gallery-caption' );
+				var tiledCaption = tiledCaptionEl && tiledCaptionEl.innerHTML;
+				if ( tiledCaption ) {
+					attrs.caption = tiledCaption;
+				}
+
+				var origDimensions = getOriginalDimensions( item );
+
+				attrs.origWidth = origDimensions.width || attrs.thumbSize.width;
+				attrs.origHeight = origDimensions.height || attrs.thumbSize.height;
+
+				if ( typeof wpcom !== 'undefined' && wpcom.carousel && wpcom.carousel.generateImgSrc ) {
+					attrs.src = wpcom.carousel.generateImgSrc( item, max );
+				} else {
+					attrs.src = selectBestImageUrl( {
+						origFile: attrs.src,
+						origWidth: attrs.origWidth,
+						origHeight: attrs.origHeight,
+						maxWidth: max.width,
+						maxHeight: max.height,
+						mediumFile: attrs.mediumFile,
+						largeFile: attrs.largeFile,
+					} );
+				}
+
+				// Set the final src.
+				item.setAttribute( 'data-gallery-src', attrs.src );
+
+				if ( attrs.attachmentId !== '0' ) {
+					attrs.title = util.texturize( attrs.title );
+					attrs.desc = util.texturize( attrs.desc );
+					attrs.caption = util.texturize( attrs.caption );
+
+					// Initially, the image is a 1x1 transparent gif.
+					// The preview is shown as a background image on the slide itself.
+					var image = new Image();
+					image.src = attrs.src;
+
+					var slideEl = document.createElement( 'div' );
+					slideEl.classList.add( 'swiper-slide' );
+					slideEl.setAttribute( 'itemprop', 'associatedMedia' );
+					slideEl.setAttribute( 'itemscope', '' );
+					slideEl.setAttribute( 'itemtype', 'https://schema.org/ImageObject' );
+					var zoomEl = document.createElement( 'div' );
+					zoomEl.classList.add( 'swiper-zoom-container' );
+
+					carousel.gallery.appendChild( slideEl );
+
+					slideEl.appendChild( zoomEl );
+					zoomEl.appendChild( image );
+					slideEl.setAttribute( 'data-attachment-id', attrs.attachmentId );
+					slideEl.setAttribute( 'data-permalink', attrs.permalink );
+					slideEl.setAttribute( 'data-orig-file', attrs.origFile );
+
+					if ( useInPageThumbnails ) {
+						// Use the image already loaded in the gallery as a preview.
+						attrs.previewImage = attrs.src;
+					}
+
+					var slide = { el: slideEl, attrs: attrs, index: i };
+					carousel.slides.push( slide );
+				}
+			} );
+		}
+
+		function loadSwiper( gallery, options ) {
+			if ( ! window.Swiper670 ) {
+				var loader = document.querySelector( '#jp-carousel-loading-overlay' );
+				domUtil.show( loader );
+				var jsScript = document.createElement( 'script' );
+				jsScript.id = 'jetpack-carousel-swiper-js';
+				jsScript.src = window.jetpackSwiperLibraryPath.url;
+				jsScript.async = true;
+				jsScript.onload = function () {
+					domUtil.hide( loader );
+					openCarousel( gallery, options );
+				};
+				jsScript.onerror = function () {
+					domUtil.hide( loader );
+				};
+				document.head.appendChild( jsScript );
+				return;
+			}
+			openCarousel( gallery, options );
+		}
+
+		function openCarousel( gallery, options ) {
+			var settings = {
+				imgSelector:
+					'.gallery-item [data-attachment-id], .tiled-gallery-item [data-attachment-id], img[data-attachment-id], img[data-id]',
+				startIndex: 0,
+			};
+
+			var data = domUtil.getJSONAttribute( gallery, 'data-carousel-extra' );
+			var tapTimeout;
+
+			if ( ! data ) {
+				return; // don't run if the default gallery functions weren't used
+			}
+
+			initializeCarousel();
+
+			if ( carousel.isOpen ) {
+				return; // don't open if already opened
+			}
+			carousel.isOpen = true;
+
+			// make sure to stop the page from scrolling behind the carousel overlay, so we don't trigger
+			// infiniscroll for it when enabled (Reader, theme infiniscroll, etc).
+			originalOverflow = getComputedStyle( document.body ).overflow;
+			document.body.style.overflow = 'hidden';
+			// prevent html from overflowing on some of the new themes.
+			originalHOverflow = getComputedStyle( document.documentElement ).overflow;
+			document.documentElement.style.overflow = 'hidden';
+			scrollPos = window.scrollY || window.pageYOffset || 0;
+
+			carousel.container.setAttribute( 'data-carousel-extra', JSON.stringify( data ) );
+			stat( [ 'open', 'view_image' ] );
+
+			// If options exist, lets merge them
+			// with our default settings
+			for ( var option in options || {} ) {
+				settings[ option ] = options[ option ];
+			}
+
+			if ( settings.startIndex === -1 ) {
+				settings.startIndex = 0; // -1 returned if can't find index, so start from beginning
+			}
+
+			domUtil.emitEvent( carousel.overlay, 'jp_carousel.beforeOpen' );
+			carousel.gallery.innerHTML = '';
+
+			// Need to set the overlay manually to block or swiper does't initialise properly.
+			carousel.overlay.style.opacity = 1;
+			carousel.overlay.style.display = 'block';
+
+			initCarouselSlides( gallery.querySelectorAll( settings.imgSelector ), settings.startIndex );
+
+			swiper = new window.Swiper670( '.jp-carousel-swiper-container', {
+				centeredSlides: true,
+				zoom: true,
+				loop: carousel.slides.length > 1,
+				// Turn off interactions and hide navigation arrows if there is only one slide.
+				enabled: carousel.slides.length > 1,
+				pagination: {
+					el: '.jp-swiper-pagination',
+					clickable: true,
+				},
+				navigation: {
+					nextEl: '.jp-swiper-button-next',
+					prevEl: '.jp-swiper-button-prev',
+				},
+				initialSlide: settings.startIndex,
+				on: {
+					init: function () {
+						selectSlideAtIndex( settings.startIndex );
+					},
+				},
+				preventClicks: false,
+				preventClicksPropagation: false,
+				preventInteractionOnTransition: ! domUtil.isTouch(),
+				threshold: 5,
+			} );
+
+			swiper.on( 'slideChange', function ( swiper ) {
+				var index;
+				// Swiper indexes slides from 1, plus when looping to left last slide ends up
+				// as 0 and looping to right first slide as total slides + 1. These are adjusted
+				// here to match index of carousel.slides.
+				if ( swiper.activeIndex === 0 ) {
+					index = carousel.slides.length - 1;
+				} else if ( swiper.activeIndex === carousel.slides.length + 1 ) {
+					index = 0;
+				} else {
+					index = swiper.activeIndex - 1;
+				}
+				selectSlideAtIndex( index );
+
+				carousel.overlay.classList.remove( 'jp-carousel-hide-controls' );
+			} );
+
+			swiper.on( 'zoomChange', function ( swiper, scale ) {
+				if ( scale > 1 ) {
+					carousel.overlay.classList.add( 'jp-carousel-hide-controls' );
+				}
+
+				if ( scale === 1 ) {
+					carousel.overlay.classList.remove( 'jp-carousel-hide-controls' );
+				}
+			} );
+
+			swiper.on( 'doubleTap', function ( swiper ) {
+				clearTimeout( tapTimeout );
+				if ( swiper.zoom.scale === 1 ) {
+					var zoomTimeout = setTimeout( function () {
+						carousel.overlay.classList.remove( 'jp-carousel-hide-controls' );
+						clearTimeout( zoomTimeout );
+					}, 150 );
+				}
+			} );
+
+			swiper.on( 'tap', function () {
+				if ( swiper.zoom.scale > 1 ) {
+					tapTimeout = setTimeout( function () {
+						carousel.overlay.classList.toggle( 'jp-carousel-hide-controls' );
+					}, 150 );
+				}
+			} );
+
+			domUtil.fadeIn( carousel.overlay, function () {
+				domUtil.emitEvent( carousel.overlay, 'jp_carousel.afterOpen' );
+			} );
+		}
+
+		// Register the event listener for starting the gallery
+		document.body.addEventListener( 'click', function ( e ) {
+			var isCompatible =
+				window.CSS && window.CSS.supports && window.CSS.supports( 'display', 'grid' );
+
+			// IE11 support is being dropped in August 2021. The new swiper.js libray is not IE11 compat
+			// so just default to opening individual image attachment/media pages for IE.
+			if ( ! isCompatible ) {
+				return;
+			}
+
+			var target = e.target;
+			var gallery = domUtil.closest( target, gallerySelector );
+
+			if ( gallery ) {
+				if ( ! testForData( gallery ) ) {
+					return;
+				}
+
+				var parent = target.parentElement;
+				var grandparent = parent.parentElement;
+
+				// If Gallery is made up of individual Image blocks check for custom link before
+				// loading carousel.
+				if ( grandparent && grandparent.classList.contains( 'wp-block-image' ) ) {
+					var parentHref = parent.getAttribute( 'href' );
+
+					// If the link does not point to the attachment or media file then assume Image has
+					// a custom link so don't load the carousel.
+					if (
+						parentHref.split( '?' )[ 0 ] !==
+							target.getAttribute( 'data-orig-file' ).split( '?' )[ 0 ] &&
+						parentHref !== target.getAttribute( 'data-permalink' )
+					) {
+						return;
+					}
+				}
+
+				// Do not open the modal if we are looking at a gallery caption from before WP5, which may contain a link.
+				if ( parent.classList.contains( 'gallery-caption' ) ) {
+					return;
+				}
+
+				// Do not open the modal if we are looking at a caption of a gallery block, which may contain a link.
+				if ( domUtil.matches( parent, 'figcaption' ) ) {
+					return;
+				}
+
+				// Set height to auto.
+				// Fix some themes where closing carousel brings view back to top.
+				document.documentElement.style.height = 'auto';
+
+				e.preventDefault();
+
+				// Stopping propagation in case there are parent elements
+				// with .gallery or .tiled-gallery class
+				e.stopPropagation();
+
+				var item = domUtil.closest( target, itemSelector );
+				var index = Array.prototype.indexOf.call( gallery.querySelectorAll( itemSelector ), item );
+				loadSwiper( gallery, { startIndex: index } );
+			}
+		} );
+
+		// Handle lightbox (single image gallery) for images linking to 'Attachment Page'.
+		if ( Number( jetpackCarouselStrings.single_image_gallery ) === 1 ) {
+			processSingleImageGallery();
+			document.body.addEventListener( 'is.post-load', function () {
+				processSingleImageGallery();
+			} );
+		}
+
+		// Makes carousel work on page load and when back button leads to same URL with carousel hash
+		// (i.e. no actual document.ready trigger).
+		window.addEventListener( 'hashchange', function () {
+			var hashRegExp = /jp-carousel-(\d+)/;
+
+			if ( ! window.location.hash || ! hashRegExp.test( window.location.hash ) ) {
+				if ( carousel.isOpen ) {
+					closeCarousel();
+				}
+
+				return;
+			}
+
+			if ( window.location.hash === lastKnownLocationHash && carousel.isOpen ) {
+				return;
+			}
+
+			if ( window.location.hash && carousel.gallery && ! carousel.isOpen && history.back ) {
+				history.back();
+				return;
+			}
+
+			lastKnownLocationHash = window.location.hash;
+			var matchList = window.location.hash.match( hashRegExp );
+			var attachmentId = parseInt( matchList[ 1 ], 10 );
+			var galleries = document.querySelectorAll( gallerySelector );
+
+			// Find the first thumbnail that matches the attachment ID in the location
+			// hash, then open the gallery that contains it.
+			for ( var i = 0; i < galleries.length; i++ ) {
+				var gallery = galleries[ i ];
+				var selected;
+
+				var images = gallery.querySelectorAll( 'img' );
+				for ( var j = 0; j < images.length; j++ ) {
+					if (
+						parseInt( images[ j ].getAttribute( 'data-attachment-id' ), 10 ) === attachmentId ||
+						parseInt( images[ j ].getAttribute( 'data-id' ), 10 ) === attachmentId
+					) {
+						selected = j;
+						break;
+					}
+				}
+
+				if ( selected !== undefined ) {
+					openOrSelectSlide( gallery, selected );
+					break;
+				}
+			}
+		} );
+
+		if ( window.location.hash ) {
+			domUtil.emitEvent( window, 'hashchange' );
+		}
+	}
+
+	if ( document.readyState !== 'loading' ) {
+		init();
+	} else {
+		document.addEventListener( 'DOMContentLoaded', init );
+	}
+} )();
+;
+( function () {
+	'use strict';
+
+	if ( typeof window.wpcom === 'undefined' ) {
+		window.wpcom = {};
+	}
+
+	if ( window.wpcom.carousel ) {
+		return;
+	}
+
+	var prebuilt_widths = jetpackCarouselStrings.widths;
+	var pageviews_stats_args = jetpackCarouselStrings.stats_query_args;
+
+	var findFirstLargeEnoughWidth = function ( original_w, original_h, dest_w, dest_h ) {
+		var inverse_ratio = original_h / original_w;
+
+		for ( var i = 0; i < prebuilt_widths.length; ++i ) {
+			if ( prebuilt_widths[ i ] >= dest_w || prebuilt_widths[ i ] * inverse_ratio >= dest_h ) {
+				return prebuilt_widths[ i ];
+			}
+		}
+
+		return original_w;
+	};
+
+	var removeResizeFromImageURL = function ( url ) {
+		return removeArgFromURL( url, 'resize' );
+	};
+
+	var removeArgFromURL = function ( url, arg ) {
+		var re = new RegExp( '[\\?&]' + arg + '(=[^?&]+)?' );
+		if ( url.match( re ) ) {
+			return url.replace( re, '' );
+		}
+		return url;
+	};
+
+	var addWidthToImageURL = function ( url, width ) {
+		width = parseInt( width, 10 );
+		// Give devices with a higher devicePixelRatio higher-res images (Retina display = 2, Android phones = 1.5, etc)
+		if ( 'undefined' !== typeof window.devicePixelRatio && window.devicePixelRatio > 1 ) {
+			width = Math.round( width * window.devicePixelRatio );
+		}
+		url = addArgToURL( url, 'w', width );
+		url = addArgToURL( url, 'h', '' );
+		return url;
+	};
+
+	var addArgToURL = function ( url, arg, value ) {
+		var re = new RegExp( arg + '=[^?&]+' );
+		if ( url.match( re ) ) {
+			return url.replace( re, arg + '=' + value );
+		} else {
+			var divider = url.indexOf( '?' ) !== -1 ? '&' : '?';
+			return url + divider + arg + '=' + value;
+		}
+	};
+
+	var stat = function ( names ) {
+		if ( typeof names !== 'string' ) {
+			names = names.join( ',' );
+		}
+
+		new Image().src = window.location.protocol +
+			'//pixel.wp.com/g.gif?v=wpcom-no-pv' +
+			'&x_carousel=' + names +
+			'&baba=' + Math.random();
+	};
+
+	var pageview = function ( post_id ) {
+		new Image().src = window.location.protocol +
+			'//pixel.wp.com/g.gif?host=' + encodeURIComponent( window.location.host ) +
+			'&ref=' + encodeURIComponent( document.referrer ) +
+			'&rand=' + Math.random() +
+			'&' + pageviews_stats_args +
+			'&post=' + encodeURIComponent( post_id );
+	};
+
+	var generateImgSrc = function ( srcItem, max ) {
+		var origSize = srcItem.getAttribute( 'data-orig-size' ) || '';
+
+		var src = srcItem.getAttribute( 'src' ) || srcItem.getAttribute( 'original' ) || srcItem.getAttribute( 'data-original' ) || srcItem.getAttribute( 'data-lazy-src' );
+		if ( src.indexOf( 'imgpress' ) !== -1 ) {
+			src = srcItem.getAttribute( 'data-orig-file' );
+		}
+		// Square/Circle galleries use a resize param that needs to be removed.
+		src = removeResizeFromImageURL( src );
+		src = addWidthToImageURL(
+			src,
+			findFirstLargeEnoughWidth( origSize.width, origSize.height, max.width, max.height )
+		);
+
+		return src;
+	};
+
+	window.wpcom.carousel = {
+		findFirstLargeEnoughWidth: findFirstLargeEnoughWidth,
+		removeResizeFromImageURL: removeResizeFromImageURL,
+		addWidthToImageURL: addWidthToImageURL,
+		stat: stat,
+		pageview: pageview,
+		generateImgSrc: generateImgSrc
+	};
+
+} )();
+;

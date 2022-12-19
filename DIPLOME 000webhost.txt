@@ -1,0 +1,62 @@
+DIPLOME
+
+CONNEXION / 
+Adresse web 
+https://fr.000webhost.com
+
+Nom d’utilisateur
+jmtriartstudiophoto@outlook.fr
+
+Mot de passe
+Orlane2023
+
+SITE :
+https://fr.000webhost.com
+
+
+jmtriartstudiophotos.000webhostapp.com 
+
+MOT DE PASS
+H5yr35AWgPetrDJ
+
+------------------------------------------------
+
+Nom d'hôte: 
+files.000webhost.com
+
+Port :
+21
+
+Nom d'utilisateur:
+tstudiophoto
+
+Mot de passe:
+même que le mot de passe de votre site Web :
+H5yr35AWgPetrDJ
+
+----------------------------------------------------
+
+Créer une Nouvelle Base de Données
+
+Nom de la Base de données
+deploiementjm
+
+Utilisateur de la Base de données
+JM
+
+Mot de Passe
+3F7_wfo(4h(_+48@
+
+
+-------------------------------------------------
+
+
+github.com
+Adresse web 
+https://github.com
+
+Nom d’utilisateur
+jmtriartstudiophoto@outlook.fr
+
+Mot de passe
+Orlane2023
